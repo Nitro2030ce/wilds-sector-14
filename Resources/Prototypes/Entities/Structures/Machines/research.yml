@@ -29,7 +29,6 @@
     - Arsenal
     - Experimental
     - CivilianServices
-    - Biochemical
   - type: FHResearchTree # Far Horizons
     tree: ResearchTreeNT
     maxQueueSize: 3

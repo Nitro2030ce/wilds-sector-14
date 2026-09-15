@@ -1,0 +1,10 @@
+- type: entity
+  id: TowercapSap
+  parent: Log
+  components:
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 1

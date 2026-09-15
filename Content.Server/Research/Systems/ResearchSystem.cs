@@ -92,16 +92,7 @@ namespace Content.Server.Research.Systems
 
             var set = new HashSet<Entity<ResearchServerComponent>>();
             _lookup.GetGridEntities(grid, set);
-            var final = new HashSet<Entity<ResearchServerComponent>>();
-            var clientStation = _station.GetOwningStation(client);
-            foreach (var thing in set)
-            {
-                if (_station.GetOwningStation(thing.Owner) == clientStation)
-                {
-                    final.Add(thing);
-                }
-            }
-            return final;
+            return set;
         }
 
         public override void Update(float frameTime)

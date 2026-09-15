@@ -13,12 +13,19 @@
     - OreProcessorIndustrialMachineCircuitboard
     - ClothingMaskWeldingGas
     - ClothingShoesBootsJump
-    - MechEquipmentDrill
-    - WeaponProtoKineticAccelerator
-    - ShuttleGunKineticCircuitboard
-    - MechEquipmentKineticAccelerator
     - RadarConsoleCircuitboard
     - HandHeldMassScanner
+  announceTo:
+    - Supply
+
+- type: researchTreeNode
+  id: SalvWeap
+  name: research-technology-salvage-weapons
+  cost: 5000
+  tier: Tier1
+  unlocks:
+    - WeaponProtoKineticAccelerator
+    - ShuttleGunKineticCircuitboard
   announceTo:
     - Supply
 
@@ -50,8 +57,8 @@
   name: research-tree-node-ripley
   cost: 7500
   tier: Tier1
-  requires: 
-    - MechanicalCompress
+  requires:
+    - Robotics
   unlocks:
     - RipleyHarness
     - RipleyLArm
@@ -71,36 +78,57 @@
   name: research-tree-node-riot-control
   cost: 8000
   tier: Tier1
+  requires:
+    - NonlethalAmmunition
   unlocks:
     - Truncheon
     - TelescopicShield
     - HoloprojectorSecurity
-    - ClothingBackpackElectropack
+    - WeaponDisablerSMG
   announceTo:
     - Security
 
 - type: researchTreeNode
-  id: SpecialAmmo
-  name: research-tree-node-ammo
+  id: NonlethalAmmunition
+  name: research-technology-nonlethal-ammunition
+  cost: 5000
+  tier: Tier1
+  unlocks:
+    - MagazineShotgunBeanbag
+    - BoxShellTranquilizer
+    - BoxBeanbag
+    - WeaponDisabler
+  announceTo:
+    - Security
+
+- type: researchTreeNode
+  id: DraconicMunitions
+  name: research-technology-draconic-munitions
   cost: 10000
   tier: Tier1
   requires:
-    - RiotControl
+    - NonlethalAmmunition
   unlocks:
     - BoxShotgunIncendiary
     - MagazineRifleIncendiary
     - MagazinePistolIncendiary
     - MagazinePistolSubMachineGunIncendiary
-    - MagazineLightRifleIncendiary
-    - SpeedLoaderMagnumIncendiary
     - MagazineShotgunIncendiary
     - MagazineBoxPistolIncendiary
     - MagazineBoxMagnumIncendiary
-    - MagazineBoxLightRifleIncendiary
     - MagazineBoxRifleIncendiary
-    - LightRifleHeavyMagazineIncendiary
     - MagazinePistolSubMachineGunIncendiary
-    - SpeedLoaderShotgunIncendiary
+  announceTo:
+    - Security
+
+- type: researchTreeNode
+  id: UraniumMunitions
+  name: research-technology-uranium-munitions
+  cost: 7500
+  tier: Tier1
+  requires:
+    - NonlethalAmmunition
+  unlocks:
     - MagazineRifleUranium
     - MagazinePistolUranium
     - MagazinePistolSubMachineGunUranium
@@ -111,9 +139,6 @@
     - MagazineBoxLightRifleUranium
     - MagazineBoxRifleUranium
     - BoxShotgunUranium
-    - LightRifleHeavyMagazineUranium
-    - MagazinePistolSubMachineGunUranium
-    - SpeedLoaderShotgunUranium
   announceTo:
     - Security
 
@@ -144,6 +169,32 @@
   announceTo:
     - Engineering
 
+- type: researchTreeNode
+  id: EVAManufacturing
+  name: research-technology-eva-manufacturing
+  tier: Tier1
+  cost: 7500
+  unlocks:
+    - Spationautsuit
+    - EVAsuit
+    - EVAsuitHelmet
+  announceTo:
+    - Engineering
+
+- type: researchTreeNode
+  id: SpecializedEVA
+  name: research-technology-specialized-eva
+  tier: Tier2
+  requires:
+    - EVAManufacturing
+  cost: 62500
+  unlocks:
+    - Engineeringsuit
+    - Atmossuit
+    - Miningsuit
+  announceTo:
+    - Engineering
+
 # Laser
 
 - type: researchTreeNode
@@ -153,7 +204,6 @@
   tier: Tier1
   unlocks:
     - WeaponLaserCarbine
-    - WeaponMechCombatFiredartLaser
   announceTo:
     - Security
 
@@ -201,30 +251,21 @@
     - FlashPayload
     - ExplosivePayload
     - ChemicalPayload
+    - CableDetStack1
+    - EmptyDetonator
   announceTo:
     - Security
 
 - type: researchTreeNode
-  id: NuclearPowerGeneration
-  name: research-tree-node-nuclear-reactor
-  cost: 7500
+  id: SpecialMeans
+  name: research-technology-special-means
   tier: Tier1
-  requires:
-    - PowerGeneration
+  cost: 5000
   unlocks:
-    - NuclearFabricatorMachineCircuitboard
-    - UraniumReactorFuelRod
-    - PlasmaReactorFuelRod
-    - UraniumGlassReactorFuelRod
-    - SilverReactorControlRod
-    - PlasteelReactorControlRod
-    - PlasmaGlassReactorControlRod
-    - SilverReactorGasChannel
-    - PlasteelReactorGasChannel
-    - PlasmaGlassReactorGasChannel
-    - SilverReactorHeatExchanger
-    - PlasteelReactorHeatExchanger
-    - PlasmaGlassReactorHeatExchanger
+  - ClothingBackpackElectropack
+  - ClothingHandsMercGlovesCombat
+  - ClothingHandsTacticalMaidGloves
+  - ClothingHandsGlovesCombat
 
 # Research
 
@@ -320,6 +361,20 @@
     - Service
     - Security
 
+- type: researchTreeNode
+  id: ADVTeleComms
+  name: research-tree-node-adv-telecomms
+  cost: 10000
+  tier: Tier3
+  requires:
+    - AVComms
+  unlocks:
+    - TelecomServer1kCircuitboard
+    - HolopadLongRangeMachineCircuitboard
+  announceTo:
+    - Service
+    - Security
+
 # Robotics
 
 - type: researchTreeNode
@@ -327,67 +382,16 @@
   name: research-tree-node-robotics
   cost: 5000
   tier: Tier1
-  requires:
-    - AVComms
   unlocks:
     - ProximitySensor
 
-# Cybernetics
-
-- type: researchTreeNode
-  id: Cyberlimbs
-  name: research-tree-node-cyberlimbs
-  cost: 4000
-  tier: Tier1
-  requires:
-    - Robotics
-  unlocks:
-    - LeftArmCyber
-    - RightArmCyber
-    - LeftHandCyber
-    - RightHandCyber
-    - LeftLegCyber
-    - RightLegCyber
-    - LeftFootCyber
-    - RightFootCyber
-  announceTo:
-    - Medical
-
-- type: researchTreeNode
-  id: BudgetCyberorgans
-  name: research-tree-node-cyberorgans
-  cost: 4000
-  tier: Tier1
-  requires:
-    - Robotics
-  unlocks:
-    - BudgetCyberEyes
-    - BudgetCyberTongue
-    - BudgetCyberLiver
-    - BudgetCyberStomach
-    - BudgetCyberKidneys
-  announceTo:
-    - Medical
-
 # Chem
-
-- type: researchTreeNode
-  id: AutomatedInjection
-  name: research-tree-node-injection
-  cost: 4000
-  tier: Tier1
-  unlocks:
-    - SlowAutoinjector
-  announceTo:
-    - Medical
 
 - type: researchTreeNode
   id: AdvSpray
   name: research-tree-node-spray
   cost: 10000
   tier: Tier1
-  requires:
-    - AutomatedInjection
   unlocks:
     - WeaponSprayNozzle
     - ClothingBackpackWaterTank
@@ -395,25 +399,6 @@
     - Service
 
 # Biology
-
-- type: researchTreeNode
-  id: Surgery
-  name: research-tree-node-surgery
-  cost: 4000
-  tier: Tier1
-  unlocks:
-    - BoneSetter
-    - BoneGel
-    - Scalpel
-    - Retractor
-    - Cautery
-    - Saw
-    - Hemostat
-  unlockFlags:
-    - UnlockFlagSurgeryPlastic
-    - UnlockFlagSurgerySpeed1
-  announceTo:
-    - Medical
 
 - type: researchTreeNode
   id: MeatManipulation
@@ -454,12 +439,10 @@
   tier: Tier2
   requires: 
     - SalvEquip
-    - MechanicalCompress
   unlocks:
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
-    - MechEquipmentDrillDiamond
     - BorgModuleAdvancedMining
   announceTo:
     - Supply
@@ -469,8 +452,8 @@
   name: research-tree-node-rec-mech
   cost: 7500
   tier: Tier2
-  requires: 
-    - MechanicalCompress
+  requires:
+    - Robotics
   unlocks:
     - HonkerHarness
     - HonkerLArm
@@ -493,36 +476,16 @@
   announceTo:
     - Service
 
-- type: researchTreeNode
-  id: IndustialMech
-  name: research-tree-node-industrial-mech
-  cost: 11050
-  tier: Tier2
-  requires: 
-    - MassExcav
-    - RecreationalMech
-  unlocks:
-    - ClarkeHarness
-    - ClarkeHead
-    - ClarkeLArm
-    - ClarkeRArm
-    - ClarkeTreads
-    - ClarkeCentralElectronics
-    - ClarkePeripheralsElectronics
-    - RipleyMKIIHarness
-    - RipleyUpgradeKit
-  announceTo:
-    - Supply
-
 # Sec
 
 - type: researchTreeNode
   id: KineticModifications
   name: research-tree-node-kinetic-mods
-  cost: 7500
+  cost: 37500
   tier: Tier2
-  requires: 
-    - SpecialAmmo
+  requires:
+    - SalvEquip
+    - SalvWeap
   unlocks:
     - PKAUpgradeDamage
     - PKAUpgradeRange
@@ -532,39 +495,18 @@
     - Supply
 
 - type: researchTreeNode
-  id: APAmmo
-  name: research-tree-node-ap-ammo
-  cost: 11500
-  tier: Tier2
-  requires: 
-    - SpecialAmmo
-  unlocks:
-    - SpeedLoaderMagnumAP
-    - MagazinePistolAP
-    - MagazinePistol40AP
-    - MagazineRifleAP
-    - MagazineLightRifleAP
-    - MagazineBoxMagnumAP
-    - MagazineBoxPistolAP
-    - MagazineBoxPistol40AP
-    - MagazineBoxRifleAP
-    - MagazineBoxLightRifleAP
-    - LightRifleHeavyMagazineAP
-    - MagazinePistolSubMachineGunAP
-  announceTo:
-    - Security
-
-- type: researchTreeNode
-  id: PaddyMech
-  name: research-tree-node-paddy
-  cost: 8500
+  id: SecurityEVA
+  name: research-technology-security-eva
   tier: Tier2
   requires:
-    - KineticModifications
+    - EVAManufacturing
+  cost: 75000
   unlocks:
-    - PaddyUpgradeKit
-  announceTo:
-    - Security
+    - Securityhardsuit
+    - Brigmedichardsuit
+    - Wardensecurityhardsuit
+    - Headofsecurityhardsuit
+
 
 # Space
 
@@ -585,26 +527,10 @@
     - Engineering
 
 - type: researchTreeNode
-  id: PointDefense
-  name: research-tree-node-point-defense
-  cost: 10000
-  tier: Tier2
-  requires: 
-    - Shuttlecraft
-  unlocks:
-    - WeaponTurretPointDefenseMachineCircuitboard
-  announceTo:
-    - Security
-    - Supply
-    - Engineering
-
-- type: researchTreeNode
   id: ShuttleArmament
   name: research-tree-node-shuttle-gun
-  cost: 10500
+  cost: 52500
   tier: Tier2
-  requires: 
-    - PointDefense
   unlocks:
     - PowerCageRechargerCircuitboard
     - PowerCageSmall
@@ -625,35 +551,19 @@
 - type: researchTreeNode
   id: LaserGun2
   name: research-tree-node-laser-2
-  cost: 10000
+  cost: 50000
   tier: Tier2
   requires: 
     - LaserGun
   unlocks:
     - WeaponLaserCannon
-    - WeaponMechCombatSolarisLaser
-    - WeaponLaserImmolator
-  announceTo:
-    - Security
-
-- type: researchTreeNode
-  id: IonGun
-  name: research-tree-node-ion
-  cost: 8200
-  tier: Tier2
-  requires: 
-    - LaserGun2
-    - EnergyBarriers
-  unlocks:
-    - WeaponIonRifle
-    - WeaponIonCarbine
   announceTo:
     - Security
 
 - type: researchTreeNode
   id: RayGun
   name: research-tree-node-ray
-  cost: 10000
+  cost: 50000
   tier: Tier2
   requires: 
     - LaserGun2
@@ -662,36 +572,7 @@
   announceTo:
     - Security
 
-- type: researchTreeNode
-  id: EnergyBarriers
-  name: research-tree-node-ebarrier
-  cost: 5400
-  tier: Tier2
-  unlocks:
-    - EnergyDomeTurtle
-  announceTo:
-    - Engineering
-    - Security
-
 # Power
-
-- type: researchTreeNode
-  id: BlastproofContainers
-  name: research-tree-node-blast-proof-containers
-  cost: 9000
-  tier: Tier2
-  requires:
-    - ExplosiveTech
-  unlocks:
-    - LargeBeakerReinforced
-    - BeakerReinforced
-    - ChemistryVialReinforced
-    - EmptyBottleReinforced
-    - JugReinforced
-    - ReinforcedMiniatureEmptyChemistryVial
-  announceTo:
-    - Security
-    - Medical
 
 - type: researchTreeNode
   id: AdvancedTools
@@ -707,26 +588,6 @@
     - BorgModuleAdvancedTool
     - Fulton
     - FultonBeacon
-  announceTo:
-    - Engineering
-
-- type: researchTreeNode
-  id: NuclearPowerRecycling
-  name: research-tree-node-nuclear-2
-  cost: 12500
-  tier: Tier2
-  requires:
-    - NuclearPowerGeneration
-  unlocks:
-    - NuclearCentrifugeMachineCircuitboard
-    - PlutoniumReactorFuelRod
-    - BananiumReactorFuelRod
-    - GoldReactorControlRod
-    - DiamondReactorControlRod
-    - GoldReactorGasChannel
-    - DiamondReactorGasChannel
-    - GoldReactorHeatExchanger
-    - DiamondReactorHeatExchanger
   announceTo:
     - Engineering
 
@@ -802,72 +663,6 @@
     - Service
     - Engineering
 
-- type: researchTreeNode
-  id: BananiumWeapons
-  name: research-tree-node-bananium-weapons
-  cost: 6000
-  tier: Tier2
-  requires:
-    - AstroTiles
-  unlocks:
-    - MechEquipmentHonkerBananaMortar
-    - MechEquipmentHonkerMousetrapMortar
-  announceTo:
-    - Service
-
-# Robotics
-
-- type: researchTreeNode
-  id: AILawboards
-  name: research-tree-node-ai-lawboard
-  cost: 7000
-  tier: Tier2
-  requires:
-    - Robotics
-  unlocks:
-    - NTDefaultCircuitBoard
-    - AsimovCircuitBoard
-    - CorporateCircuitBoard
-    - CommandmentCircuitBoard
-    - PaladinCircuitBoard
-    - PanicmovCircuitBoard
-    - GenieCircuitBoard
-    - ReporterCircuitBoard
-    - LiveLetLiveCircuitBoard
-    - StationEfficiencyCircuitBoard
-    - RobocopCircuitBoard
-    - GameMasterCircuitBoard
-    - ArtistCircuitBoard
-    - NutimovCircuitBoard
-    - JermovCircuitBoard
-
-- type: researchTreeNode
-  id: ClowningTech
-  name: research-tree-node-clown-tech
-  cost: 4000
-  tier: Tier2
-  requires:
-    - BananiumWeapons
-    - AILawboards
-  unlocks:
-    - PushHorn
-    - BorgModuleAdvancedClowning
-  announceTo:
-    - Service
-
-- type: researchTreeNode
-  id: AdvMedBorg
-  name: research-tree-node-mech-treatment
-  cost: 5000
-  tier: Tier2
-  requires:
-    - AILawboards
-    - Cyberlimbs
-  unlocks:
-    - BorgModuleAdvancedChemical
-  announceTo:
-    - Medical
-
 # Cybernetics
 
 - type: researchTreeNode
@@ -876,27 +671,26 @@
   cost: 10000
   tier: Tier2
   requires:
-    - Cyberlimbs
+    - Robotics
   unlocks:
     - ClothingBackpackHarmpack
   announceTo:
     - Security
 
+# Robotics
+
 - type: researchTreeNode
-  id: EyeImplants
-  name: research-tree-node-eye-implants
-  cost: 10000
+  id: ClowningTech
+  name: research-tree-node-clown-tech
+  cost: 4000
   tier: Tier2
   requires:
-    - BudgetCyberorgans
+    - Robotics
   unlocks:
-    - EyeImplantWelding
-    - EyeImplantMedical
-    - EyeImplantSecurity
+    - PushHorn
+    - BorgModuleAdvancedClowning
   announceTo:
-    - Security
-    - Medical
-    - Engineering
+    - Service
 
 # Chem
 
@@ -954,60 +748,12 @@
 
 # Tier 3
 
-# Mechs
-
-- type: researchTreeNode
-  id: GygaxMech
-  name: research-tree-node-gygax
-  cost: 11600
-  tier: Tier3
-  requires:
-    - IndustialMech
-    - PaddyMech
-  unlocks:
-    - GygaxHarness
-    - GygaxArmor
-    - GygaxHead
-    - GygaxLArm
-    - GygaxLLeg
-    - GygaxRArm
-    - GygaxRLeg
-    - GygaxCentralElectronics
-    - GygaxPeripheralsElectronics
-    - GygaxTargetingElectronics
-    - WeaponMechCombatUltraRifle
-  announceTo:
-    - Security
-
-- type: researchTreeNode
-  id: DurandMech
-  name: research-tree-node-durand
-  cost: 16600
-  tier: Tier3
-  requires: 
-    - GygaxMech
-  unlocks:
-    - DurandHarness
-    - DurandArmor
-    - DurandHead
-    - DurandLArm
-    - DurandLLeg
-    - DurandRArm
-    - DurandRLeg
-    - DurandCentralElectronics
-    - DurandPeripheralsElectronics
-    - DurandTargetingElectronics
-    - WeaponMechCombatShotgun
-    - WeaponMechCombatShotgunIncendiary
-  announceTo:
-    - Security
-
 # Space
 
 - type: researchTreeNode
   id: AdvShuttleWeapons
   name: research-tree-node-shuttle-gun-2
-  cost: 15000
+  cost: 150000
   tier: Tier3
   requires: 
     - ShuttleArmament
@@ -1020,31 +766,8 @@
     - Supply
     - Engineering
 
-- type: researchTreeNode
-  id: ScanGates
-  name: research-tree-node-scan-gate
-  cost: 5000
-  tier: Tier3
-  requires:
-    - AdvShuttleWeapons
-  unlocks:
-    - ScanGateMachineCircuitboard
-  announceTo:
-    - Security
 
 # Power
-
-- type: researchTreeNode
-  id: ExplosiveMechAmmo
-  name: research-tree-node-mech-explosives
-  cost: 15400
-  tier: Tier3
-  requires:
-    - BlastproofContainers
-  unlocks:
-    - WeaponMechCombatMissileRack8
-  announceTo:
-    - Security
 
 - type: researchTreeNode
   id: Microreactor
@@ -1053,7 +776,6 @@
   tier: Tier3
   requires:
     - AdvancedTools
-    - NuclearPowerRecycling
   unlocks:
     - PowerCellMicroreactor
     - PowerCellHyper
@@ -1065,12 +787,11 @@
 - type: researchTreeNode
   id: ThermalGun
   name: research-tree-node-thermal-gun
-  cost: 15000
+  cost: 150000
   tier: Tier3
   requires:
     - RayGun
   unlocks:
-    - WeaponLaserSvalinn
     - WeaponTemperatureGun
   announceTo:
     - Security
@@ -1078,27 +799,13 @@
 - type: researchTreeNode
   id: AdvLaserPistol
   name: research-tree-node-adv-laser
-  cost: 15000
+  cost: 150000
   tier: Tier3
   requires:
     - Microreactor
-    - IonGun
   unlocks:
     - WeaponAdvancedLaser
     - PortableRecharger
-    - WeaponMechCombatImmolationGun
-  announceTo:
-    - Security
-
-- type: researchTreeNode
-  id: Declone
-  name: research-tree-node-declone
-  cost: 30000
-  tier: Tier3
-  requires:
-    - AdvLaserPistol
-  unlocks:
-    - WeaponDecloner
   announceTo:
     - Security
 
@@ -1142,99 +849,12 @@
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
-    - MechEquipmentDrillDiamond
     - BorgModuleAdvancedMining
     - DeviceDesynchronizer
   announceTo:
     - Supply
     - Medical
     - Service
-
-# Cybernetics
-
-- type: researchTreeNode
-  id: FunctionalCyberlimbs
-  name: research-tree-node-functional-cyberlimb
-  cost: 9320
-  tier: Tier3
-  requires:
-    - Harmpack
-  unlocks:
-    - LeftArmCyberReaper
-    - RightArmCyberReaper
-    - LeftArmCyberMechwright
-    - RightArmCyberMechwright
-    - LeftArmCyberBulwark
-    - RightArmCyberBulwark
-  announceTo:
-    - Security
-    - Medical
-    - Engineering
-
-- type: researchTreeNode
-  id: NVEyes
-  name: research-tree-node-nv-eyes
-  cost: 7680
-  tier: Tier3
-  requires:
-    - EyeImplants
-  unlocks:
-    - CyberEyeNightVision
-  announceTo:
-    - Medical
-
-- type: researchTreeNode
-  id: ThermalEyes
-  name: research-tree-node-tv-eyes
-  cost: 9320
-  tier: Tier3
-  requires:
-    - EyeImplants
-  unlocks:
-    - CyberEyeThermal
-  announceTo:
-    - Medical
-
-# Cyborgs
-
-- type: researchTreeNode
-  id: BorgPlaceholder1
-  name: research-tree-node-placeholder-1
-  cost: 1
-  tier: Tier3
-  requires:
-    - ClowningTech
-
-- type: researchTreeNode
-  id: BorgPlaceholder2
-  name: research-tree-node-placeholder-2
-  cost: 1
-  tier: Tier3
-  requires:
-    - AdvMedBorg
-
-- type: researchTreeNode
-  id: BorgPlaceholder3
-  name: research-tree-node-placeholder-3
-  cost: 1
-  tier: Tier3
-  requires:
-    - BorgPlaceholder1
-    - BorgPlaceholder2
-
-- type: researchTreeNode
-  id: SecBorg
-  name: research-tree-node-mech-security
-  cost: 25000
-  tier: Tier3
-  requires:
-    - BorgPlaceholder3
-    - FunctionalCyberlimbs
-  unlocks:
-    - SecborgEndoskeleton
-    - BorgModuleLaserCarbine
-  announceTo:
-    - Security
 
 # Chem
 
@@ -1248,21 +868,5 @@
   unlocks:
     - LauncherSyringe
     - MiniSyringe
-  announceTo:
-    - Medical
-
-- type: researchTreeNode
-  id: Cloning
-  name: research-tree-node-cloning
-  cost: 25000
-  tier: Tier3
-  requires:
-    - StasisBed
-    - AdvSurgery
-    - SyringeGun
-  unlocks:
-    - CloningConsoleComputerCircuitboard 
-    - CloningPodMachineCircuitboard 
-    - MedicalScannerMachineCircuitboard
   announceTo:
     - Medical

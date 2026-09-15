@@ -18,6 +18,7 @@ research-tree-node-arti = Basic XenoArcheology
 research-tree-node-alt-research = Alternative Research
 research-tree-node-entertainment = Advanced Entertainment
 research-tree-node-av-comms = A/V Communication
+research-tree-node-adv-telecomms = Advanced Telecommunications
 research-tree-node-robotics = Basic Robotics
 research-tree-node-cyberlimbs = Basic Cyberlimbs
 research-tree-node-cyberorgans = Budget CyberOrgans

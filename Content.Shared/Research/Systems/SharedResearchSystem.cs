@@ -319,6 +319,7 @@ public abstract class SharedResearchSystem : EntitySystem
     }
 
     // Far Horizons start
+/*
     public void RemoveLatheRecipe(EntityUid uid, ProtoId<LatheRecipePrototype> recipe, TechnologyDatabaseComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -333,5 +334,6 @@ public abstract class SharedResearchSystem : EntitySystem
         var ev = new TechnologyDatabaseModifiedEvent();
         RaiseLocalEvent(uid, ref ev);
     }
+*/
     // Far Horizons end
 }
