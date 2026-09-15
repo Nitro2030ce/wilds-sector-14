@@ -215,9 +215,26 @@
   description: barsign-prototype-description-empbarsign
 
 - type: barSign
+  id: pregluxuries
+  name: barsign-prototype-name-pregluxuries
+  icon:
+    sprite: Structures/Wallmounts/barsign.rsi
+    state: pregluxuries
+  description: barsign-prototype-description-pregluxuries
+
+- type: barSign
   id: Default
   name: barsign-prototype-name-default
   icon:
     sprite: Structures/Wallmounts/barsign.rsi
     state: default
   description: barsign-prototype-description-default
+
+
+- type: barSign
+  id: nosmoking
+  name: barsign-prototype-name-nosmoking
+  icon:
+    sprite: Structures/Wallmounts/barsign.rsi
+    state: nosmoking
+  description: barsign-prototype-description-nosmoking

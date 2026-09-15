@@ -1,14 +1,28 @@
 <div class="header" align="center">  
-<img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg">  
-</div>
+<img width="256" height="256" alt="wildslogo" src="https://github.com/user-attachments/assets/c4860707-5e11-4286-aaa4-fd4b50c607ec" />
+    
+<h1>Wilds Sector 14</h1>
 
-Space Station 14 Persistence is a fork of Space Station 14.
+
+
+This is a fork of Space Station 14 Persistence, which is a fork of Space Station 14. Wilds Sector 14 attempts to not use NT lore and do something different in a fresh, hardcore survival setting in a near-future era where all actions, and (most) events are fully player-driven; craft everything previously unavailable, interact with new and rebalanced mechanics intended specifically for longer rounds, new recipes and devices, create factions and build ships and stations with custom assignments and accesses, and more. Extended daily rounds that save everything at the end, and resume next next day.
+
+
+## Extra Credits
+
+Special thanks to 
+
+https://github.com/michaelchessall/SS14-Persistence and https://github.com/Summerly56/persistent-survival
+
+and
+
+https://github.com/space-wizards/space-station-14
 
 ## Links
 
 <div class="header" align="center">  
 
-[Discord](https://discord.ss14.io/) 
+[Discord]
 
 </div>
 
@@ -22,3 +36,7 @@ Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licens
 
 > [!NOTE]
 > Some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+
+## Contributions
+
+All contributions must follow our [contribution policy](rules-contributing.md)

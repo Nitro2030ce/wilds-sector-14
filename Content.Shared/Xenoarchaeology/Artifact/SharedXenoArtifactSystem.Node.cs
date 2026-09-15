@@ -382,10 +382,19 @@ public abstract partial class SharedXenoArtifactSystem
     /// </summary>
     public void UpdateNodeResearchValue(Entity<XenoArtifactNodeComponent> node)
     {
+        // ResearchValue is a networked, server-authoritative field. If the client recomputes it
+        // locally it can drift from the server's value (e.g. from a not-yet-reconciled durability),
+        // and because extraction only changes ConsumedResearchValue the server never re-syncs
+        // ResearchValue afterwards - leaving a node permanently showing phantom extractable points
+        // that the server refuses to extract. So only ever compute it on the server.
+        if (!_net.IsServer)
+            return;
+
         XenoArtifactNodeComponent nodeComponent = node;
         if (nodeComponent.Attached == null)
         {
             nodeComponent.ResearchValue = 0;
+            Dirty(node);
             return;
         }
 
@@ -398,6 +407,17 @@ public abstract partial class SharedXenoArtifactSystem
         var nodeDepth = node.Comp.Depth;
         var depthMultipler = Math.Pow(1.5f, Math.Pow(nodeDepth, 1.5f));
         nodeComponent.ResearchValue = (int)(nodeComponent.BasePointValue * depthMultipler * durabilityMultiplier);
+
+        // Nodes that were unlocked by artifexium wildcards instead of by satisfying their triggers
+        // yield fewer points, scaled by how much of the unlock the chemical actually covered.
+        if (nodeComponent.ArtifexiumUnlockFraction > 0f)
+        {
+            var artifexiumFraction = Math.Clamp(nodeComponent.ArtifexiumUnlockFraction, 0f, 1f);
+            var penalty = nodeComponent.ArtifexiumMinPenalty + (nodeComponent.ArtifexiumMaxPenalty - nodeComponent.ArtifexiumMinPenalty) * artifexiumFraction;
+            nodeComponent.ResearchValue = (int)(nodeComponent.ResearchValue * (1f - penalty));
+        }
+
+        Dirty(node);
     }
 
     public void Shatter(Entity<XenoArtifactNodeComponent?> node)

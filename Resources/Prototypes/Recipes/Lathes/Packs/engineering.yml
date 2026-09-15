@@ -24,10 +24,12 @@
   - ClothingHeadHatCone
   - ClothingHeadHatHardhatYellowEmpty
   - AccessConfigurator
+  - GridConfigurator
   - ToolboxMechanical
   - VoiceSensorCopper
   - SignallerCopper
   - OreBag
+  - ConstructionBag # Persistence: add construction bag
   - PlantBag
   - ClothingShoesSkates
   - Floodlight
@@ -37,6 +39,16 @@
   recipes:
   - AirTank
   - GasAnalyzer
+# Persistence: make other gas tanks craftable
+  - OxygenTank
+  - NitrogenTank
+  - NitrousOxideTank
+  - PlasmaTank
+  - EmergencyOxygenTank
+  - EmergencyNitrogenTank
+  - EmergencyFunnyOxygenTank
+# Persistence: make emergency eva suit craftable
+  - EmergencyEVAsuit
 
 - type: latheRecipePack
   id: ElectronicsStatic
