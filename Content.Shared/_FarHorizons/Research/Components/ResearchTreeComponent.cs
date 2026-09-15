@@ -21,10 +21,6 @@ public sealed partial class FHResearchTreeComponent : Component
 
     [DataField]
     public int BankedPoints = 0;
-    [DataField]
-    public int BankCapacity = 15000;
-    [DataField]
-    public int PointBleed = 1000;
 
     [DataField]
     public int MaxQueueSize = 3;

@@ -206,6 +206,12 @@
   - type: Item
     heldPrefix: produce
   - type: SolutionContainerManager
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 1
   - type: MeleeWeapon
     damage:
       types:

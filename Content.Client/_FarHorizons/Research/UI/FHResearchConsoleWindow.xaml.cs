@@ -113,7 +113,7 @@ public sealed partial class FHResearchConsoleWindow : FancyWindow
             SelectionScroll.Visible = true;
             NoSelectionBox.Visible = false;
 
-            ResearchButton.Disabled = !(_unlockedNodes.Contains(selected.Value) && !_researchedNodes.Contains(selected.Value));
+            ResearchButton.Disabled = !(_unlockedNodes.Contains(selected.Value));
             if (!ResearchButton.Disabled)
             {
                 if (_queue.Contains(selected.Value))

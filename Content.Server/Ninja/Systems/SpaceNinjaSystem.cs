@@ -34,7 +34,6 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
         base.Initialize();
 
         SubscribeLocalEvent<SpaceNinjaComponent, EmaggedSomethingEvent>(OnDoorjack);
-        SubscribeLocalEvent<SpaceNinjaComponent, ResearchStolenEvent>(OnResearchStolen);
         SubscribeLocalEvent<SpaceNinjaComponent, ThreatCalledInEvent>(OnThreatCalledIn);
         SubscribeLocalEvent<SpaceNinjaComponent, CriminalRecordsHackedEvent>(OnCriminalRecordsHacked);
     }
@@ -133,16 +132,6 @@ public sealed class SpaceNinjaSystem : SharedSpaceNinjaSystem
     /// <summary>
     /// Add to greentext when stealing technologies.
     /// </summary>
-    private void OnResearchStolen(EntityUid uid, SpaceNinjaComponent comp, ref ResearchStolenEvent args)
-    {
-        var gained = Download(uid, args.Techs);
-        var str = gained == 0
-            ? Loc.GetString("ninja-research-steal-fail")
-            : Loc.GetString("ninja-research-steal-success", ("count", gained), ("server", args.Target));
-
-        Popup.PopupEntity(str, uid, uid, PopupType.Medium);
-    }
-
     private void OnThreatCalledIn(Entity<SpaceNinjaComponent> ent, ref ThreatCalledInEvent args)
     {
         _codeCondition.SetCompleted(ent.Owner, ent.Comp.TerrorObjective);

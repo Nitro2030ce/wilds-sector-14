@@ -6,19 +6,22 @@
   id: ResearchTreeNT
   nodes:
     - SalvEquip
+    - SalvWeap
     - IndustrialEng
     - MechanicalCompress
     - RipleyMech
     - RiotControl
-    - SpecialAmmo
+    - NonlethalAmmunition
+    - DraconicMunitions
+    - UraniumMunitions
     - LaserGun
+    - SpecialMeans
     - Atmospherics
     - AdvAtmospherics
     - AstroTiles
     - PowerGeneration
     - AdvPowerCells
     - ExplosiveTech
-    - NuclearPowerGeneration
     - MagBoot
     - AnomResearch
     - AnomCoreHarvesting
@@ -26,61 +29,35 @@
     - AltResearch
     - AdvEntertainment
     - AVComms
+    - ADVTeleComms
     - Robotics
-    - Cyberlimbs
-    - BudgetCyberorgans
-    - AutomatedInjection
-    - Surgery
     - MeatManipulation
     - Hydroponics
     - MassExcav
     - AdvancedTools
-    - NuclearPowerRecycling
     - RecreationalMech
-    - IndustialMech
     - KineticModifications
-    - APAmmo
-    - PaddyMech
     - Shuttlecraft
-    - PointDefense
     - ShuttleArmament
-    - IonGun
     - RayGun
     - LaserGun2
-    - BlastproofContainers
-    - EnergyBarriers
     - AdvAnomResearch
     - ArtiRecycle
     - GravManipulation
     - DeterrenceTech
-    - BananiumWeapons
-    - AILawboards
-    - ClowningTech
-    - AdvMedBorg
     - Harmpack
-    - EyeImplants
+    - ClowningTech
     - AdvCleaning
     - AdvSpray
-    - AdvSurgery
     - StasisBed
-    - GygaxMech
-    - DurandMech
     - AdvShuttleWeapons
-    - ScanGates
-    - ExplosiveMechAmmo
     - Microreactor
     - ThermalGun
     - AdvLaserPistol
-    - Declone
     - QuantumLeaping
     - SpeedBoot
     - BluespaceMastery
-    - FunctionalCyberlimbs
-    - NVEyes
-    - ThermalEyes
-    - BorgPlaceholder1
-    - BorgPlaceholder2
-    - BorgPlaceholder3
-    - SecBorg
     - SyringeGun
-    - Cloning
+    - SecurityEVA
+    - EVAManufacturing
+    - SpecializedEVA
