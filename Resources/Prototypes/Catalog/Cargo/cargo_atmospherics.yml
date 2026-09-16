@@ -129,22 +129,26 @@
   category: cargoproduct-category-name-engineering
   group: market
 
-- type: cargoProduct
-  id: TinyFanBoardCargo
-  icon:
-    sprite: Objects/Misc/module.rsi
-    state: engineering
-  product: AtmosDeviceFanTinyMachineCircuitBoard
-  cost: 4000
-  category: cargoproduct-category-name-engineering
-  group: market
+# Wilds Sector 14 - These are too OP
 
-- type: cargoProduct
-  id: DirectionalFanBoardCargo
-  icon:
-    sprite: Objects/Misc/module.rsi
-    state: engineering
-  product: AtmosDeviceFanDirectionalMachineCircuitBoard
-  cost: 4000
-  category: cargoproduct-category-name-engineering
-  group: market
+#- type: cargoProduct
+#  id: TinyFanBoardCargo
+#  icon:
+#    sprite: Objects/Misc/module.rsi
+#    state: engineering
+#  product: AtmosDeviceFanTinyMachineCircuitBoard
+#  cost: 4000
+#  category: cargoproduct-category-name-engineering
+#  group: market
+
+#- type: cargoProduct
+#  id: DirectionalFanBoardCargo
+#  icon:
+#    sprite: Objects/Misc/module.rsi
+#    state: engineering
+#  product: AtmosDeviceFanDirectionalMachineCircuitBoard
+#  cost: 4000
+#  category: cargoproduct-category-name-engineering
+#  group: market
+
+# Wilds Sector 14 - End
