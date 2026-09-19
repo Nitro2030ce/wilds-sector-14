@@ -54,6 +54,8 @@
 
 - type: reaction
   id: Ash
+  requiredMixerCategories:
+  - Stir # Wilds Sector 14 - Prevents losing the oil by accident
   minTemp: 520
   reactants:
     Oil:
@@ -86,3 +88,16 @@
       amount: 5
   products:
     WeldingFuel: 10
+
+# Wilds Sector 14 - Plasma chems to gas
+- type: reaction
+  id: PlasmaBoiling
+  minTemp: 700
+  reactants:
+    Plasma:
+      amount: 50
+  effects:
+  - !type:CreateGas
+    gas: Plasma
+  products:
+    Plasma: 0

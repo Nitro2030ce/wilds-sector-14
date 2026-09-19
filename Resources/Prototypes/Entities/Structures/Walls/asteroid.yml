@@ -77,41 +77,41 @@
           Unprimed:
             state: gibtonite_inactive
             visible: false
-  - type: TimerTrigger
-    examinable: false
-    beepInterval: 0.4
-    beepSound:
-      collection: GlassCrack
-  - type: RandomTimerTrigger
-    min: 8
-    max: 10
-  - type: ExplodeOnTrigger
-    keysIn:
-    - timer
-  - type: Explosive
-    explosionType: DemolitionCharge
-    totalIntensity: 450
-    intensitySlope: 2.5
-    maxIntensity: 10
-    canCreateVacuum: false
+#  - type: TimerTrigger
+#    examinable: false
+#    beepInterval: 0.4
+#    beepSound:
+#      collection: GlassCrack
+#  - type: RandomTimerTrigger
+#    min: 8
+#    max: 10
+#  - type: ExplodeOnTrigger
+#    keysIn:
+#    - timer
+#  - type: Explosive
+#    explosionType: DemolitionCharge
+#    totalIntensity: 450
+#    intensitySlope: 2.5
+#    maxIntensity: 10
+#    canCreateVacuum: false
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 3
       behaviors:
-      - !type:TimerStartBehavior
+#      - !type:TimerStartBehavior
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
     - trigger:
         !type:DamageTrigger
-        damage: 500 # you have to really smack it for it to manually detonate. re-examine once defusal exists
+        damage: 3 # you have to really smack it for it to manually detonate. re-examine once defusal exists
       behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:TriggerBehavior
-        keyOut: timer # explode immediately
+       - !type:DoActsBehavior
+         acts: ["Destruction"]
+#      - !type:TriggerBehavior
+#        keyOut: timer # explode immediately
 
 # Ore veins
 - type: entity

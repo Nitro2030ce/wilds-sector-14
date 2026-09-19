@@ -486,7 +486,7 @@
   recipes:
   - ClothingNeckCloakCap
   - ClothingNeckCloakCapFormal
-  - ClothingNeckCloakCentcom
+# - ClothingNeckCloakCentcom
   - ClothingNeckCloakHos
   - ClothingNeckCloakQm
   - ClothingNeckCloakPirateCap
@@ -534,16 +534,16 @@
   - CarpetWhite
   - CarpetSkyBlue
 
-- type: latheRecipePack
-  id: ClothingCentComm
-  recipes:
-  - ClothingHeadHatCentcomcap
-  - ClothingHeadHatCentcom
-  - ClothingUniformJumpsuitCentcomAgent
-  - ClothingUniformJumpsuitCentcomFormal
-  - ClothingUniformJumpskirtCentcomFormalDress
-  - ClothingUniformJumpsuitCentcomOfficer
-  - ClothingUniformJumpsuitCentcomOfficial
+#- type: latheRecipePack
+#  id: ClothingCentComm
+#  recipes:
+#  - ClothingHeadHatCentcomcap
+#  - ClothingHeadHatCentcom
+#  - ClothingUniformJumpsuitCentcomAgent
+#  - ClothingUniformJumpsuitCentcomFormal
+#  - ClothingUniformJumpskirtCentcomFormalDress
+#  - ClothingUniformJumpsuitCentcomOfficer
+#  - ClothingUniformJumpsuitCentcomOfficial
 
 - type: latheRecipePack
   id: ClothingSyndie
@@ -560,7 +560,7 @@
   - ClothingUniformJumpsuitPyjamaSyndicatePink
   - ClothingHeadPyjamaSyndicateRed
   - ClothingUniformJumpsuitPyjamaSyndicateRed
-  - ClothingOuterWinterCentcom
+# - ClothingOuterWinterCentcom
   - ClothingOuterWinterSyndie
   - ClothingOuterWinterSyndieCap
   - BedsheetSyndie

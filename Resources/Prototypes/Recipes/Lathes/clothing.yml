@@ -1,3 +1,5 @@
+# Wilds Sector 14 - Centcom clothing disabled for lore purposes
+
 # Base prototypes
 
 - type: latheRecipe
@@ -273,30 +275,30 @@
   id: ClothingUniformJumpsuitSalvageSpecialist
   result: ClothingUniformJumpsuitSalvageSpecialist
 
-- type: latheRecipe
-  parent: BaseCommandJumpsuitRecipe
-  id: ClothingUniformJumpsuitCentcomAgent
-  result: ClothingUniformJumpsuitCentcomAgent
+# - type: latheRecipe
+#   parent: BaseCommandJumpsuitRecipe
+#   id: ClothingUniformJumpsuitCentcomAgent
+#   result: ClothingUniformJumpsuitCentcomAgent
 
-- type: latheRecipe
-  parent: BaseCommandJumpsuitRecipe
-  id: ClothingUniformJumpsuitCentcomFormal
-  result: ClothingUniformJumpsuitCentcomFormal
+# - type: latheRecipe
+#   parent: BaseCommandJumpsuitRecipe
+#   id: ClothingUniformJumpsuitCentcomFormal
+#   result: ClothingUniformJumpsuitCentcomFormal
 
-- type: latheRecipe
-  parent: BaseCommandJumpsuitRecipe
-  id: ClothingUniformJumpskirtCentcomFormalDress
-  result: ClothingUniformJumpskirtCentcomFormalDress
+# - type: latheRecipe
+#   parent: BaseCommandJumpsuitRecipe
+#   id: ClothingUniformJumpskirtCentcomFormalDress
+#   result: ClothingUniformJumpskirtCentcomFormalDress
 
-- type: latheRecipe
-  parent: BaseCommandJumpsuitRecipe
-  id: ClothingUniformJumpsuitCentcomOfficer
-  result: ClothingUniformJumpsuitCentcomOfficer
+# - type: latheRecipe
+#   parent: BaseCommandJumpsuitRecipe
+#   id: ClothingUniformJumpsuitCentcomOfficer
+#   result: ClothingUniformJumpsuitCentcomOfficer
 
-- type: latheRecipe
-  parent: BaseCommandJumpsuitRecipe
-  id: ClothingUniformJumpsuitCentcomOfficial
-  result: ClothingUniformJumpsuitCentcomOfficial
+# - type: latheRecipe
+#   parent: BaseCommandJumpsuitRecipe
+#   id: ClothingUniformJumpsuitCentcomOfficial
+#   result: ClothingUniformJumpsuitCentcomOfficial
 
 # Assorted oversuits
 - type: latheRecipe
@@ -1332,10 +1334,10 @@
   id: ClothingOuterWinterCE
   result: ClothingOuterWinterCE
 
-- type: latheRecipe
-  parent: BaseCommandCoatRecipe
-  id: ClothingOuterWinterCentcom
-  result: ClothingOuterWinterCentcom
+#- type: latheRecipe
+#  parent: BaseCommandCoatRecipe
+#  id: ClothingOuterWinterCentcom
+#  result: ClothingOuterWinterCentcom
 
 - type: latheRecipe
   parent: BaseCommandCoatRecipe
@@ -1544,15 +1546,15 @@
   id: ClothingHeadHatCapcap
   result: ClothingHeadHatCapcap
 
-- type: latheRecipe
-  parent: BaseCommandHatRecipe
-  id: ClothingHeadHatCentcom
-  result: ClothingHeadHatCentcom
+# - type: latheRecipe
+#   parent: BaseCommandHatRecipe
+#   id: ClothingHeadHatCentcom
+#   result: ClothingHeadHatCentcom
 
-- type: latheRecipe
-  parent: BaseCommandHatRecipe
-  id: ClothingHeadHatCentcomcap
-  result: ClothingHeadHatCentcomcap
+# - type: latheRecipe
+#   parent: BaseCommandHatRecipe
+#   id: ClothingHeadHatCentcomcap
+#   result: ClothingHeadHatCentcomcap
 
 - type: latheRecipe
   parent: BaseCommandHatRecipe
@@ -1929,10 +1931,10 @@
   id: ClothingNeckCloakCapFormal
   result: ClothingNeckCloakCapFormal
 
-- type: latheRecipe
-  parent: BaseCommandCoatRecipe
-  id: ClothingNeckCloakCentcom
-  result: ClothingNeckCloakCentcom
+# - type: latheRecipe
+#   parent: BaseCommandCoatRecipe
+#   id: ClothingNeckCloakCentcom
+#   result: ClothingNeckCloakCentcom
 
 - type: latheRecipe
   parent: BaseCommandCoatRecipe
