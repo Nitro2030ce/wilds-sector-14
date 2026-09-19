@@ -399,6 +399,8 @@
       - id: CarbonDioxideCanister
       - id: PlasmaCanister
         weight: 0.25
+      - id: HydrogenCanister
+        weight: 0.25
       - id: NitrousOxideCanister
         weight: 0.25
 
