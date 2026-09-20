@@ -86,7 +86,7 @@
   - type: SolutionContainerManager
     solutions:
       output:
-        maxVol: 1000 #*slaps roof of machine* This baby can fit so much omnizine in it // Survival 1000u from 400u
+        maxVol: 800 # Wilds Sector 14 - changed from 400u to 800u
   - type: MaterialReclaimer
     whitelist:
       components:
