@@ -543,7 +543,7 @@
     - ClothingService
     - ClothingMilitary
     - ClothingLabCoats
-    - ClothingCentComm
+#   - ClothingCentComm
     - ClothingAssortedHats
     - ClothingAssortedOversuits
     - Cloaks
@@ -559,7 +559,7 @@
     - CommandBags
     - ClothingSyndie
     - ContrabandBags
-    - CentralCommandBags
+#   - CentralCommandBags
     - HandyFlags
     - Bandanas
     - PouchesPack
