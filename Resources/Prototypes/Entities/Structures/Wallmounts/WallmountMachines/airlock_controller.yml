@@ -15,14 +15,12 @@
   - type: WirelessNetworkConnection
     range: 200
   - type: DeviceNetworkRequiresPower
-# - type: SpamEmitSound
-#   enabled: false
-#   minInterval: 6
-#   maxInterval: 6
-#   sound:
-#     path: /Audio/Machines/alarm.ogg
-#     params:
-#       volume: -10
+  - type: SpamEmitSound
+    enabled: false
+    minInterval: 2
+    maxInterval: 2
+    sound:
+      path: /Audio/Machines/airlock_controller.ogg
   - type: Clickable
   - type: InteractionOutline
   - type: ContainerContainer
