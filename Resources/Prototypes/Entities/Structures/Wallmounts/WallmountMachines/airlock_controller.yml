@@ -21,6 +21,8 @@
     maxInterval: 2
     sound:
       path: /Audio/Machines/airlock_controller.ogg
+      params:
+        volume: -5
   - type: Clickable
   - type: InteractionOutline
   - type: ContainerContainer
