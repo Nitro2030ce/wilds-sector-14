@@ -28,6 +28,14 @@
               amount: 2
               doAfter: 3
 
+        - to: titaniumWindow
+          steps:
+            - material: ReinforcedGlass
+              amount: 2
+            - material: Titanium
+              amount: 2
+              doAfter: 10
+
         - to: phoronGlassWindow
           steps:
             - material: PhoronGlass
@@ -184,6 +192,32 @@
           completed:
             - !type:GivePrototype
               prototype: SheetRPGlass1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 2
+            - tool: Prying
+              doAfter: 3
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 2
+            - tool: Anchoring
+              doAfter: 3
+
+    - node: titaniumWindow
+      entity: TitaniumWindow
+      edges:
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: SheetRGlass1
+              amount: 2
+            - !type:GivePrototype
+              prototype: SheetTitanium1
               amount: 2
             - !type:DeleteEntity {}
           steps:
