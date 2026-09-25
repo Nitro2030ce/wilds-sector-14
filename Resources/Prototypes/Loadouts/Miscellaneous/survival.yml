@@ -204,6 +204,7 @@
   storage:
     back:
     - EmergencyCoolingUnit
+    - ClothingOuterVestTank
 
 # Military / Double Extended
 - type: loadout
@@ -291,7 +292,6 @@
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesAvali
   equipment:
-    outerClothing: ClothingOuterVestTank
     suitstorage: CoolingUnit
 
 # Breath Tool On Face
