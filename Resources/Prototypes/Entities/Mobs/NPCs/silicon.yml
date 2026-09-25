@@ -321,7 +321,10 @@
       Alive:
         reagent: Tricordrazine
         quantity: 30
-      Critical:
+      HardCritical:
+        reagent: Inaprovaline
+        quantity: 15
+      SoftCritical:
         reagent: Inaprovaline
         quantity: 15
   - type: EmaggableMedibot
