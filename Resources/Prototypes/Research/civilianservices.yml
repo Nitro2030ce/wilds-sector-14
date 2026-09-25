@@ -1,5 +1,19 @@
 # Tier 1
 
+# Wilds Sector 14
+- type: technology
+  id: PersonalSleepTech
+  name: research-technology-personal-sleep-tech
+  icon:
+    sprite: Objects/Misc/module.rsi
+    state: engineering
+  discipline: CivilianServices
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - PersonalCryoMachineCircuitboard
+
+
 # _Persistence14 content
 - type: technology
   id: PlushieSoundActivation

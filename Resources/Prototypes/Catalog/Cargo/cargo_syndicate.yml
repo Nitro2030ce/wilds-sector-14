@@ -1,12 +1,14 @@
 # Keep this sorted.
 # Rank 1: Price range 0-1000
-- type: cargoProduct
-  id: PersonalCryoMachineCircuitboard
-  icon: { sprite: Objects/Misc/module.rsi, state: engineering }
-  product: PersonalCryoMachineCircuitboard
-  cost: 600
-  category: cargoproduct-category-name-syndicate
-  group: syndicatemarket
+
+# Wilds Sector 14 - Moved to research
+#- type: cargoProduct
+#  id: PersonalCryoMachineCircuitboard
+#  icon: { sprite: Objects/Misc/module.rsi, state: engineering }
+#  product: PersonalCryoMachineCircuitboard
+#  cost: 600
+#  category: cargoproduct-category-name-syndicate
+#  group: syndicatemarket
 
 - type: cargoProduct
   id: SyndicatePlayingCards

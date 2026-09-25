@@ -608,3 +608,11 @@
   id: HolopadLongRangeMachineCircuitboard
   result: HolopadLongRangeMachineCircuitboard
   unlockUses: 4
+
+
+# Wilds Sector 14
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseGeneralComputerRecipeCategory ]
+  id: PersonalCryoMachineCircuitboard
+  result: PersonalCryoMachineCircuitboard
+  unlockUses: 6
