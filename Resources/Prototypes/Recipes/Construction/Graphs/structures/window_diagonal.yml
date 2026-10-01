@@ -16,6 +16,14 @@
               amount: 2
               doAfter: 2
 
+        - to: titaniumWindowDiagonal # Wilds Sector 14
+          steps:
+            - material: ReinforcedGlass
+              amount: 2
+            - material: Titanium
+              amount: 2
+              doAfter: 4
+
         - to: reinforcedPlasmaWindowDiagonal
           steps:
             - material: ReinforcedPlasmaGlass
@@ -258,3 +266,31 @@
               doAfter: 4
             - tool: Anchoring
               doAfter: 1
+
+  # Wilds Sector 14 - Start
+
+    - node: titaniumWindowDiagonal
+      entity: TitaniumWindowDiagonal
+      edges:
+        - to: start
+          completed:
+            - !type:GivePrototype
+              prototype: SheetRGlass1
+              amount: 1
+            - !type:GivePrototype
+              prototype: SheetTitanium1
+              amount: 2
+            - !type:DeleteEntity {}
+          steps:
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 2
+            - tool: Prying
+              doAfter: 3
+            - tool: Welding
+              doAfter: 5
+            - tool: Screwing
+              doAfter: 2
+            - tool: Anchoring
+              doAfter: 3

@@ -434,21 +434,6 @@
   placementMode: SnapgridCenter
   canRotate: false
 
-
-- type: construction
-  id: TitaniumWindow
-  graph: Window
-  startNode: start
-  targetNode: titaniumWindow
-  category: construction-category-structures
-  canBuildInImpassable: true
-  conditions:
-    - !type:EmptyOrWindowValidInTile
-    - !type:NoWindowsInTile
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-
 - type: construction
   id: MiningWindow
   graph: Window
@@ -2420,3 +2405,50 @@
   placementMode: SnapgridCenter
   canRotate: false
   canBuildInImpassable: true
+
+
+  # Wilds Sector 14 - Start
+
+- type: construction
+  id: TitaniumWindow
+  graph: Window
+  startNode: start
+  targetNode: titaniumWindow
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
+- type: construction
+  id: TitaniumWindowDiagonal
+  name: titanium diagonal window
+  graph: WindowDiagonal
+  startNode: start
+  targetNode: titaniumWindowDiagonal
+  category: construction-category-structures
+  canBuildInImpassable: true
+  conditions:
+    - !type:EmptyOrWindowValidInTile
+    - !type:NoWindowsInTile
+  objectType: Structure
+  placementMode: SnapgridCenter
+
+- type: construction
+  id: TitaniumWallDiagonal
+  name: titanium diagonal wall
+  graph: GirderDiagonal
+  startNode: start
+  targetNode: titaniumWallDiagonal
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+  # Wilds Sector 14 - End

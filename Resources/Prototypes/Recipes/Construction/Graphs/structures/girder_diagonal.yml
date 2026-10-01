@@ -43,6 +43,23 @@
               amount: 2
               doAfter: 1
 
+          # Wilds Sector 14 - Start
+
+        - to: titaniumWallDiagonal
+          completed:
+          - !type:SnapToGrid
+            southRotation: false
+          conditions:
+          - !type:EntityAnchored {}
+          steps:
+          - material: Titanium
+            amount: 2
+            doAfter: 2
+          - tool: Welding
+            doAfter: 10
+
+          # Wilds Sector 14 - End
+
         - to: reinforcedGirder
           completed:
             - !type:SnapToGrid
@@ -116,7 +133,7 @@
             - material: Plasteel
               amount: 2
               doAfter: 1
-        
+
         - to: titaniumShuttleWallDiagonal
           completed:
           - !type:SnapToGrid
@@ -219,3 +236,19 @@
           doAfter: 1
         - tool: Cutting
           doAfter: 1
+
+ # Wilds Sector 14 - Start
+
+    - node: titaniumWallDiagonal
+      entity: WallTitaniumDiagonal
+      edges:
+      - to: girder
+        completed:
+          - !type:SpawnPrototype
+            prototype: SheetTitanium1
+            amount: 2
+        steps:
+        - tool: Welding
+          doAfter: 10
+        - tool: Prying
+          doAfter: 10
