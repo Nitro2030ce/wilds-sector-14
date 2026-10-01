@@ -88,7 +88,11 @@
   - type: Tool
     useSound:
       collection: Welder
-    qualities: Welding
+    qualities:
+      - Welding
+      - Axing # Wilds Sector 14 - Welder plating prying?!
+  - type: ToolTileCompatible
+    delay: 8 # Wilds Sector 14 - End
   - type: Welder
   - type: PointLight
     enabled: false
