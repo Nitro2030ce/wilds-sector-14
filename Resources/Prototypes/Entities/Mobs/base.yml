@@ -105,10 +105,10 @@
       200: Dead
   - type: MobStateActions
     actions:
-      Critical:
-      - ActionCritSuccumb
-      - ActionCritFakeDeath
-      - ActionCritLastWords
+      SoftCritical:
+      - ActionAcceptDeath
+      HardCritical:
+      - ActionAcceptDeath
       Dead:
       - ActionAcceptDeath
   - type: Deathgasp
