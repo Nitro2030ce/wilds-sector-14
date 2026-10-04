@@ -274,3 +274,14 @@
   description: persist-description
   rules:
   - PersistRoundstartVariation
+
+- type: gamePreset
+  id: Wilds
+  alias:
+  - wilds
+  name: persist-title
+  showInVote: false
+  description: persist-description
+  rules:
+  - PersistRoundstartVariation
+  - BasicStationEventScheduler
