@@ -283,5 +283,5 @@
   showInVote: false
   description: persist-description
   rules:
-  - PersistRoundstartVariation
   - BasicStationEventScheduler
+  - PersistRoundstartVariation
