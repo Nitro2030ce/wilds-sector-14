@@ -4,12 +4,27 @@
 [game]
 hostname = "[NRP] Wilds Sector 14 Test Server"
 desc = "Don't mind me, just using the base ConfigPreset!"
+map = "Wilds"
 defaultpreset = "wilds"
-soft_max_players = 30
+soft_max_players = 50
 autosaveinterval = 60
+contraband_examine = false
+
+[movement]
+mob_pushing = true
+
+[atmos]
+space_wind = true
+space_wind_max_push_force = 7
+space_wind_max_velocity = 10
+grid_impulse = false
+
+[shuttle]
+impact.enabled = false
 
 [hub]
-tags = "rp:none"
+advertise = false
+tags = "rp:high"
 
 [infolinks]
 #bug_report = "https://github.com/michaelchessall/SS14-Persistence/issues/new/choose"
@@ -19,11 +34,14 @@ github     = "https://github.com/Nitro2030ce/wilds-sector-14"
 [server]
 id = "Wilds-Sector-14"
 
+[net]
+port = 1212
+
 [funkystation.reagent_fire]
 puddle_damage_multiplier = 0.1
 
 [funkystation.cpr]
-rib_crack_damage = 20
+rib_crack_damage = 10
 rib_crack_pump = 10
 
 [funkystation.defib]
