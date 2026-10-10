@@ -120,7 +120,7 @@
   id: ILevelScience4
   demotionXP: 1400
   requiredXP: 1500
-  name: Prestigious Scientific Intstitution (4)
+  name: Prestigious Scientific Institution (4)
   markets:
     - sciencemarket
     - sciencemarket2
