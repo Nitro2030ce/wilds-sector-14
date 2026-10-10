@@ -26,8 +26,9 @@
 
 # Donkpocket
 
-# Scav: Warm gives +4 nutriment & +1 grain.
-# Warm ones contain a small amount of Omnizine.
+# Warm gives +5 nutriment.
+#Persistence 14
+#Warm ones contain a small amount of Ichor.
 
 - type: entity
   name: donk-pocket
@@ -60,8 +61,8 @@
         maxVol: 10
         reagents:
         - ReagentId: Nutriment
-          Quantity: 6 # Scav 8 < 6
-        - ReagentId: Omnizine
+          Quantity: 8
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -102,8 +103,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8 # Scav: 10 < 8
-        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Ichor
           Quantity: 4
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -138,8 +139,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8 # Scav: 10 < 8
-        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -176,8 +177,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8 # Scav: 10 < 8
-        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -222,8 +223,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 15 # Scav: 15 < 13
-        - ReagentId: Omnizine
+          Quantity: 15
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -269,7 +270,7 @@
           Quantity: 8 # Scav: 10 < 8
         - ReagentId: Honk
           Quantity: 1
-        - ReagentId: Omnizine
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -310,8 +311,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8 # Scav: 10 < 8
-        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Sugar
           Quantity: 2
@@ -353,8 +354,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8 # Scav: 10 < 8
-        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -394,8 +395,8 @@
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 8 # Scav: 10 < 8
-        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
@@ -465,7 +466,7 @@
           Quantity: 8 # Scav: 10 < 8
         - ReagentId: Fiber
           Quantity: 5
-        - ReagentId: Omnizine
+        - ReagentId: Ichor
           Quantity: 2
         - ReagentId: Grain # Scav
           Quantity: 2
