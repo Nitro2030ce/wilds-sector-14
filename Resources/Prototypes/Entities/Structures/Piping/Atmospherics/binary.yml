@@ -38,7 +38,6 @@
     priority: 1
   - type: ApcPowerReceiver
     powerLoad: 200
-  - type: Rotatable
   - type: Transform
     noRot: false
   - type: SubFloorHide
@@ -102,7 +101,6 @@
       priority: 1
     - type: ApcPowerReceiver
       powerLoad: 200
-    - type: Rotatable
     - type: Transform
       noRot: false
     - type: SubFloorHide
@@ -170,7 +168,6 @@
   placement:
     mode: AlignAtmosPipeLayers
   components:
-  - type: Rotatable
   - type: Transform
     noRot: false
   - type: SubFloorHide
@@ -521,7 +518,7 @@
     - Depressurize
 
 - type: entity
-  parent: [ BaseMachine, ConstructibleMachine ]
+  parent: [ BaseMachine, ConstructibleMachine, BaseConstructibleMachineDestructible ]
   id: GasRecycler
   name: gas recycler
   description: Recycles waste gases into useful gases. Can hold a beaker to collect reagents skimmed from the gas stream. Requires high temperature and pressure to operate.
@@ -554,7 +551,6 @@
           True: { state: running }
           False: { state: unlit }
   - type: PipeColorVisuals
-  - type: Rotatable
   - type: GasRecycler
   - type: ItemSlots
     slots:
@@ -590,15 +586,11 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 100
+        damage: 175
       behaviors:
       - !type:PlaySoundBehavior
         sound:
           collection: MetalGlassBreak
-      - !type:ChangeConstructionNodeBehavior
-        node: machineFrame
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
   - type: Machine
     board: GasRecyclerMachineCircuitboard
   - type: AtmosMonitoringConsoleDevice
@@ -618,7 +610,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: Rotatable
   - type: Transform
     noRot: false
   - type: Sprite

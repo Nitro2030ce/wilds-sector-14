@@ -115,6 +115,7 @@ public sealed partial class WallMountVisibilitySystem : EntitySystem
     /// <summary>
     /// Makes the entity visible again on component shutdown.
     /// </summary>
+    [SubscribeLocalEvent]
     private void OnWallMountShutdown(Entity<WallMountComponent> ent, ref ComponentShutdown args)
     {
         if (TerminatingOrDeleted(ent))
@@ -129,6 +130,7 @@ public sealed partial class WallMountVisibilitySystem : EntitySystem
     /// <summary>
     /// Makes the entity visible again if directional visibility is disabled for this mount.
     /// </summary>
+    [SubscribeLocalEvent]
     private void OnWallMountAfterHandleState(Entity<WallMountComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         if (ent.Comp.DirectionalVisibility)
