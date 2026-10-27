@@ -144,7 +144,7 @@
     sprite: Clothing/Head/Hardsuits/medical.rsi
     state: icon
   product: LockerChiefMedicalOfficerFilledHardsuit
-  cost: 12500
+  cost: 13500
   category: cargoproduct-category-name-medical
   group: market2
 
@@ -154,6 +154,6 @@
     sprite: Objects/Misc/module.rsi
     state: cpu_medical
   product: MedicalTechFabCircuitboard
-  cost: 7500
+  cost: 9500
   category: cargoproduct-category-name-medical
   group: market2

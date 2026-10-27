@@ -4,7 +4,17 @@
     sprite: Clothing/OuterClothing/Armor/bulletproof.rsi
     state: icon
   product: CrateSecurityArmor
-  cost: 1750
+  cost: 3250
+  category: cargoproduct-category-name-security
+  group: market
+
+- type: cargoProduct
+  id: SecurityHelmet
+  icon:
+    sprite: Clothing/Head/Helmets/security.rsi
+    state: icon
+  product: CrateSecurityHelmet
+  cost: 1550
   category: cargoproduct-category-name-security
   group: market
 
@@ -94,7 +104,7 @@
     sprite: Clothing/Head/Hats/warden.rsi
     state: icon
   product: LockerWardenFilledHardsuit
-  cost: 9000
+  cost: 12000
   category: cargoproduct-category-name-security
   group: market2
 
@@ -104,7 +114,7 @@
     sprite: Clothing/Head/Hats/hoshat.rsi
     state: icon
   product: LockerHeadOfSecurityFilledHardsuitNoGun
-  cost: 12500
+  cost: 27500
   category: cargoproduct-category-name-security
   group: market2
 
