@@ -245,7 +245,7 @@ namespace Content.Server.GameTicking
                 _loader.TrySaveGeneric(mobSure, saveFilePath, out var category);
             }
             _chatSystem.DispatchStationAnnouncement(station.Value,
-            $"{MetaData(mob).EntityName} has arrived into the Threshold.",
+            $"{MetaData(mob).EntityName} has arrived aboard the station.",
             "Arrival",
             playDefaultSound: false,
             colorOverride: Color.Gold);
