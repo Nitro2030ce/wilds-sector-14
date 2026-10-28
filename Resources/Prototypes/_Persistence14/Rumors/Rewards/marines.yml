@@ -20,6 +20,16 @@
     state: unmc-codex
 
 - type: rumorReward
+  id: UNMCMerchCrate
+  name: UNMC Merch Crate
+  description: "Anything a soldier needs to survive out in the Threshold."
+  price: 1200
+  product: CrateUNMCMerch
+  icon:
+    sprite: Clothing/Head/Bandanas/merc.rsi
+    state: icon_mask
+
+- type: rumorReward
   id: MarineViper
   name: Viper
   description: "A small and easily concealable pistol. Retrofitted with a fully automatic receiver. Uses extended pistol magazines (.35 auto)."
@@ -47,4 +57,14 @@
   product: ClothingBeltMilitaryWebbing
   icon:
     sprite: Clothing/Belt/militarywebbing.rsi
+    state: icon
+
+- type: rumorReward
+  id: MarineM45c
+  name: M45c Mk2 assault rifle
+  description: "The iconic Marine's weapon: the M45c Mk2. Comes with one magazine pre-loaded."
+  price: 7500
+  product: WeaponRifleM45c
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/m54c.rsi
     state: icon
