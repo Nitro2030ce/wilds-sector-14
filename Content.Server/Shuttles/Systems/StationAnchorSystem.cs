@@ -87,7 +87,7 @@ public sealed class StationAnchorSystem : EntitySystem
         }
         else
         {
-            if(!TryComp<TradeStationComponent>(grid, out _))
+            //if(!TryComp<TradeStationComponent>(grid, out _))
                 _shuttleSystem.Enable(grid.Value);
         }
 
