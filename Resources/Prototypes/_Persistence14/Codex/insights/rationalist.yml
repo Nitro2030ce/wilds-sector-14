@@ -64,6 +64,7 @@
     - state: shield
   - type: InstantAction
     event: !type:ArtifexiumBurstEvent
+      range: 3
 
 - type: insightTrait
   id: Rationalist3
