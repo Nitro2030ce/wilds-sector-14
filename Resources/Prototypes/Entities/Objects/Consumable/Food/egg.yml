@@ -104,8 +104,6 @@
   components:
   - type: Tag
     tags:
-    - Egg
-    - Meat
     - IgnoredByArtifactTrigger
   - type: Sprite
     layers:
