@@ -190,6 +190,8 @@
   id: AirlockCycling
   name: signal-port-name-airlock-cycling
   description: signal-port-description-airlock-cycling
+
+- type: sourcePort
   id: PowerChargeLevel0
   name: signal-port-name-power-charge-level0
   description: signal-port-description-power-charge-level0

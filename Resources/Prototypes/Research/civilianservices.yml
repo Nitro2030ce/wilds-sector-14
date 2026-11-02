@@ -11,7 +11,7 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - PersonalCryoMachineCircuitboard
+    PersonalCryoMachineCircuitboard: 6
 
 
 # _Persistence14 content
