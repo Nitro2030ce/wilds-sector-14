@@ -57,8 +57,6 @@ anomaly-name-eye = eye anomaly
 research-technology-interstellar-logistics = Interstellar Logistics
 research-technology-civilian-eva = Civilian EVA Manufacturing
 research-technology-plushie-sound-activation = Plushie Sound Activation
-research-technology-industrial-eva = Industrial EVA Manufacturing
-
 research-technology-interstellar-logistics-restock = Fulton Beacon Restock
 research-technology-advanced-powercells-restock = Power Cell Restock
 research-technology-shuttlecraft-restock-small = Small-Scale Propulsion Restock
