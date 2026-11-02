@@ -34,7 +34,7 @@
 - type: entity
   id: ZenithUpgradeModule
   parent: BaseUpgradeModule
-  name: upgrade module (Zenith-Pattern)
+  name: upgrade module (WSCS-Pattern)
   components:
   - type: Sprite
     layers:
@@ -46,7 +46,7 @@
 - type: entity
   id: GreenUpgradeModule
   parent: BaseUpgradeModule
-  name: upgrade module (Nanotrasen-Pattern)
+  name: upgrade module (Corporate-Pattern)
   components:
   - type: Sprite
     layers:
