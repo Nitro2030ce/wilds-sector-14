@@ -1,6 +1,6 @@
 - type: rumorReward
   id: GreenUpgradeModule
-  name: Upgrade Module (Nanotrasen Pattern)
+  name: Upgrade Module (Corporate Pattern)
   description: "Can be applied to a variety of items and machines."
   price: 2500
   product: GreenUpgradeModule
@@ -10,7 +10,7 @@
 
 - type: rumorReward
   id: GreenCodexFragment
-  name: Codex Fragment (Nanotrasen)
+  name: Codex Fragment (Corporate)
   description: "Will unlock a codex entry when used."
   price: 2000
   product: GreenCodexFragment
@@ -31,21 +31,11 @@
 - type: rumorReward
   id: GreenMerchCrate
   name: Marketing Shipment
-  description: "A crate of Nanotrasen themed merch for you to wear or give out."
+  description: "A crate of corpo themed merch for you to wear or give out."
   price: 1500
   product: CrateNTMerch
   icon:
     sprite: Objects/Misc/Handy_Flags/NT_handy_flag.rsi
-    state: icon
-
-- type: rumorReward
-  id: GreenFlippoWelder
-  name: Gilded CentComm Flippo
-  description: "A bluespace powered flippo lighter with auto refueling and locking mechanism you'll be the talk of the town when you pull this out at a party. In dire straits it also doubles as a welder."
-  price: 5000
-  product: CentCommFlippo
-  icon:
-    sprite: Objects/Tools/Lighters/centcomm.rsi
     state: icon
 
 - type: rumorReward

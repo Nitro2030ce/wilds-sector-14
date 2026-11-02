@@ -1,6 +1,6 @@
 - type: rumorReward
   id: ZenithUpgradeModule
-  name: Upgrade Module (Zenith Pattern)
+  name: Upgrade Module (WSCS Pattern)
   description: "Can be applied to a variety of items and machines."
   price: 2500
   product: ZenithUpgradeModule
@@ -10,7 +10,7 @@
 
 - type: rumorReward
   id: ZenithCodexFragment
-  name: Codex Fragment (Solar Legion)
+  name: Codex Fragment (Wilds Sector Colonization Society)
   description: "Will unlock a codex entry when used."
   price: 2000
   product: ZenithCodexFragment
@@ -19,11 +19,11 @@
     state: sl-codex
 
 - type: rumorReward
-  id: SoLMerchCrate
-  name: Solar Legion paraphernalia Crate
-  description: "A crate of what makes the threshold livable. The community... and cookies."
-  price: 1200
-  product: CrateSoLMerch
+  id: GreenFlippoWelder
+  name: Gilded WSCC Flippo
+  description: "A commemorative bluespace powered flippo lighter with auto refueling and locking mechanism you'll be the talk of the town when you pull this out at a party. In dire straits it also doubles as a welder."
+  price: 15000
+  product: CentCommFlippo
   icon:
-    sprite: _Persistence14/Structures/Decoration/banner.rsi
-    state: banner_sl
+    sprite: Objects/Tools/Lighters/centcomm.rsi
+    state: icon

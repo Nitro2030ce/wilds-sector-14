@@ -1,13 +1,13 @@
 - type: metaFaction
   id: Zenith
-  name: The Solar Legion
-  description: "The Solar Legion controls the Zenith Universe."
+  name: Wilds Sector Colonization Society
+  description: "The Wilds Sector Colonization Society is funding expeditions to the region."
   rumors:
     - DrinkBasicFriendly
     - EatBasicFriendly
     - PrayBasicFriendly
     - ReceiveMailFriendly
-  color: Red
+  color: Green
   levels:
     Zenith2: 150
     Zenith3: 500
@@ -21,7 +21,6 @@
     - ZenithUpgradeModule
     - TradeGood
     - ZenithCodexFragment
-    - SoLMerchCrate
     - GrandLottery
   rewardsToOffer: 2
 
@@ -41,6 +40,7 @@
     - RaidSuit
     - Hushpup
     - AdvancedTeleporterChip
+    - GreenFlippoWelder
   rewardsToOffer: 2
 
 - type: metaFactionLevel

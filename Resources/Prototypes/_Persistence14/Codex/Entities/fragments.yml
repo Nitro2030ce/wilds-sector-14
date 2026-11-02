@@ -49,7 +49,7 @@
 - type: entity
   id: ZenithCodexFragment
   parent: BaseCodexFragment
-  name: codex fragment (Solar Legion)
+  name: codex fragment (Wilds Sector Colonization Society)
   description: The minimal amount of paperwork for a solar legion worker. (Unlocks codex entries related to the Solar Legion.)
   components:
   - type: Sprite
@@ -66,7 +66,7 @@
 - type: entity
   id: GreenCodexFragment
   parent: BaseCodexFragment
-  name: codex fragment (Nanotrasen)
+  name: codex fragment (Corporate)
   description: A futuristic holographic data device capable of storing up to 2 digital documents. (Unlocks codex entries related to Nanotrasen.)
   components:
   - type: Sprite
@@ -84,7 +84,7 @@
 - type: entity
   id: PrecursorCodexFragment
   parent: BaseCodexFragment
-  name: codex fragment (Syndicate)
+  name: codex fragment (Black Market)
   description: A futuristic holographic data device capable of storing up to 3 digital documents. (Unlocks codex entries related to the Syndicate.)
   components:
   - type: Sprite

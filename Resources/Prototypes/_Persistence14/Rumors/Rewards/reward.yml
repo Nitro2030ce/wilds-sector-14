@@ -51,7 +51,7 @@
 - type: rumorReward
   id: Defib
   name: Advanced Defibrillator Kit
-  description: "A fast and compact defibrillator from Nanotrasen."
+  description: "A fast and compact defibrillator."
   price: 6000
   product: DefibrillatorNT
   icon:
@@ -172,7 +172,7 @@
 - type: rumorReward
   id: IchorCigarettes
   name: Ichor Smokes Packet
-  description: "Solar Legion cigarettes with chems capable of healing any ailment."
+  description: "Medicated cigarettes with chems capable of healing any ailment."
   price: 3000
   product: CigPackSL
   icon:

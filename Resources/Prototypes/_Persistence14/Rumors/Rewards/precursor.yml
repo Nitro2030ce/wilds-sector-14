@@ -11,7 +11,7 @@
 
 - type: rumorReward
   id: PrecursorCodexFragment
-  name: Codex Fragment (Syndicate)
+  name: Codex Fragment (Black Market)
   description: "Will unlock a codex entry when used."
   price: 2000
   product: PrecursorCodexFragment

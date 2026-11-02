@@ -1,21 +1,21 @@
 - type: codexCategory
   id: Nexus
-  name: Nexus Space
+  name: Wilds Space
   order: 0
 
 - type: codexCategory
   id: Zenith
-  name: Solar Legion
+  name: Wilds Sector Colonization Society
   order: 2
 
 - type: codexCategory
   id: Green
-  name: Nanotrasen
+  name: Corporate
   order: 3
 
 - type: codexCategory
   id: Precursor
-  name: Syndicate
+  name: Black Market
   order: 4
 
 - type: codexCategory

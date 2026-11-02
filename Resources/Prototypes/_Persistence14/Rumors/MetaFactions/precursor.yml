@@ -1,7 +1,7 @@
 - type: metaFaction
   id: Precursor
-  name: Syndicate
-  description: "The Syndicate controls the Precursor Universe."
+  name: Black Market
+  description: "The black market contains many nefarious organizations."
   rumors:
     - DrinkBasicEvil
     - EatBasicEvil

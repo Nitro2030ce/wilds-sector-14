@@ -1,13 +1,13 @@
 - type: metaFaction
   id: Green
-  name: Nanotrasen
-  description: "Nanotrasen controls the Green Universe."
+  name: Corporate
+  description: "General corporate produced goods."
   rumors:
     - DrinkBasicFriendly
     - EatBasicFriendly
     - PrayBasicFriendly
     - ReceiveMailFriendly
-  color: Green
+  color: Blue
   levels:
     Green2: 150
     Green3: 500
@@ -34,7 +34,6 @@
     - GreenUpgradeModule
     - GreenCodexFragment
     - TradeGood
-    - GreenFlippoWelder
     - GreenPhoronCrate
     - GreenMagBoots
     - ChemKit
