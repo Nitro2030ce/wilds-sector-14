@@ -84,3 +84,20 @@ signal-port-description-airlock-state-b = Held HIGH while the airlock is idle wi
 
 signal-port-name-airlock-cycling = Cycling
 signal-port-description-airlock-cycling = Held HIGH for the duration of a cycle.
+signal-port-name-power-charge-level0 = 0%
+signal-port-description-power-charge-level0 = This port is invoked when the battery is empty.
+
+signal-port-name-power-charge-level1 = >0% - 25%
+signal-port-description-power-charge-level1 = This port is invoked when the battery is between >0% and 25%.
+
+signal-port-name-power-charge-level2 = 25% - 50%
+signal-port-description-power-charge-level2 = This port is invoked when the battery is between 25% and 50%.
+
+signal-port-name-power-charge-level3 = 50% - 75%
+signal-port-description-power-charge-level3 = This port is invoked when the battery is between 50% and 75%.
+
+signal-port-name-power-charge-level4 = 75% - <100%
+signal-port-description-power-charge-level4 = This port is invoked when the battery is between 75% and <100%.
+
+signal-port-name-power-charge-level5 = 100%
+signal-port-description-power-charge-level5 = This port is invoked when the battery is full.

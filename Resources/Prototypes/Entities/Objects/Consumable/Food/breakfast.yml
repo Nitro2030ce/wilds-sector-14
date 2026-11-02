@@ -12,17 +12,17 @@
     size: Normal
   - type: Sprite
     sprite: Objects/Consumable/Food/breakfast.rsi
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 60
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 20 # Scav: 40 < 20
-        - ReagentId: Vitamin
-          Quantity: 10
-        - ReagentId: Grain # Scav
-          Quantity: 20
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 20 # Scav: 45 < 20
+      - ReagentId: Protein
+        Quantity: 15
+      - ReagentId: Vitamin
+        Quantity: 15
+      - ReagentId: Grain # Scav
+        Quantity: 25
 
 # Breakfasts
 
@@ -34,7 +34,11 @@
   components:
   - type: FlavorProfile
     flavors:
-      - food
+      - salty
+      - meaty
+      - egg
+      - bacon
+      - potatoes
   - type: Sprite
     state: fullamerican
 
@@ -46,6 +50,10 @@
   components:
   - type: FlavorProfile
     flavors:
-      - food
+      - salty
+      - meaty
+      - egg
+      - bacon
+      - tomato
   - type: Sprite
     state: fullenglish
