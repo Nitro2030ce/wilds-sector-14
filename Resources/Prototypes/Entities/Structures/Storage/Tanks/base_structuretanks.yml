@@ -30,7 +30,7 @@
 
 - type: entity
   abstract: true
-  parent: [ StorageTankIndestructible, StructureHealthContainerFlimsy, BasePaperLabelableVisualized ] # Persistence: Add BasePaperLabelable
+  parent: [ StorageTankIndestructible, StructureHealthContainerFlimsy ]
   id: StorageTank
   name: storage tank
   description: A liquids storage tank.
@@ -65,12 +65,15 @@
   - type: DrainableSolution
     solution: tank
   - type: ReagentTank
-  - type: DumpableSolution # Persistence
+  - type: DumpableSolution
     solution: tank
-  - type: BountySolution # Persistence
+  - type: BountySolution
     solution: tank
   - type: Transform
     noRot: true
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
 
 
 # For highcap tanks

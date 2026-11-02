@@ -152,12 +152,7 @@ public sealed partial class RadioSystem : SharedRadioSystem
             ResolveCustomChannelPresentation(sourceHeadset.TransmitTo.First(), channel, ref displayColor, ref displayName, ref factionTag);
         }
 
-        var commonId = "Common";
-
-        if (sourceHeadset is not null &&
-            sourceHeadset.ShowTags &&
-            !string.IsNullOrWhiteSpace(factionTag) &&
-            channel != ProtoMan.Index<RadioChannelPrototype>(commonId))
+        if (sourceHeadset is not null && sourceHeadset.ShowTags && !string.IsNullOrWhiteSpace(factionTag))
             displayName = factionTag + factionTagSeparator + displayName;
 
 
@@ -220,8 +215,7 @@ public sealed partial class RadioSystem : SharedRadioSystem
             hasActiveServer = true; // Changed from HasActiveServer(mapId, channelId)
 
         var radioQuery = EntityQueryEnumerator<ActiveRadioComponent, TransformComponent>();
-        // Unencrypted channels (e.g. Common / the Death Network SOS) are global and must not be narrowed to a faction.
-        if (channel.Encrypted && encryptionID <= 0 && TryComp<HeadsetComponent>(radioSource, out var headset) && headset != null && headset.TransmitTo.Count > 0)
+        if (encryptionID <= 0 && TryComp<HeadsetComponent>(radioSource, out var headset) && headset != null && headset.TransmitTo.Count > 0)
         {
             encryptionID = headset.TransmitTo.First();
         }

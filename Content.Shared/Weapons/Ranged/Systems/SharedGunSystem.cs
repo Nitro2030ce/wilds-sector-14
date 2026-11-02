@@ -1,4 +1,3 @@
-using Content.Shared._Persistence14.Weapons.Ranged.Events;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
@@ -201,12 +200,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (_hands.GetActiveItem(entity) is { } held &&
             TryComp(held, out GunComponent? gunComp))
         {
-            // PS14: let akimbo redirect to the off-hand gun
-            var ev = new GetUserGunEvent(held);
-            RaiseLocalEvent(entity, ref ev);
-            if (ev.Gun != held && TryComp(ev.Gun, out GunComponent? redirected))
-                (held, gunComp) = (ev.Gun, redirected);
-
             gun = (held, gunComp);
             return true;
         }
@@ -221,8 +214,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         return false;
     }
 
-    // PS14: public so akimbo can stop the partner gun when the trigger is released
-    public void StopShooting(Entity<GunComponent> ent)
+    private void StopShooting(Entity<GunComponent> ent)
     {
         if (ent.Comp.ShotCounter == 0)
             return;
@@ -234,17 +226,13 @@ public abstract partial class SharedGunSystem : EntitySystem
     }
 
     /// <summary>
-    /// Attempts to shoot at the target coordinates. Resets the shot counter after every shot,
-    /// unless <paramref name="resetShotCounter"/> is false, in which case the caller must call <see cref="StopShooting"/>.
+    /// Attempts to shoot at the target coordinates. Resets the shot counter after every shot.
     /// </summary>
-    public bool AttemptShoot(EntityUid user, Entity<GunComponent> gun, EntityCoordinates toCoordinates, EntityUid? target = null, bool resetShotCounter = true) // PS14: resetShotCounter
+    public bool AttemptShoot(EntityUid user, Entity<GunComponent> gun, EntityCoordinates toCoordinates, EntityUid? target = null)
     {
         gun.Comp.ShootCoordinates = toCoordinates;
         gun.Comp.Target = target;
         var result = AttemptShoot(user, gun);
-        if (!resetShotCounter)
-            return result;
-
         gun.Comp.ShotCounter = 0;
         DirtyField(gun.AsNullable(), nameof(GunComponent.ShotCounter));
         return result;

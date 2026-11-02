@@ -19,17 +19,13 @@ public sealed class TeleporterRowControl : PanelContainer
 
     public readonly NetEntity TeleporterUid;
     public readonly EntityCoordinates? Coordinates;
-    public readonly EntityCoordinates? ConsoleCoordinates;
     public readonly TeleporterButton LocateButton;
     public readonly TeleporterButton LinkButton;
 
-    public TeleporterRowControl(StationTeleporterStatus teleporter, bool selected, EntityCoordinates? coordinates, EntityCoordinates? consoleCoordinates, float sqrDist)
+    public TeleporterRowControl(StationTeleporterStatus teleporter, bool selected, EntityCoordinates? coordinates)
     {
         TeleporterUid = teleporter.TeleporterUid;
         Coordinates = coordinates;
-        ConsoleCoordinates = consoleCoordinates;
-
-        float distSquared = sqrDist;
 
         var linked = teleporter.LinkCoordinates is not null;
 
@@ -62,7 +58,7 @@ public sealed class TeleporterRowControl : PanelContainer
             HorizontalAlignment = HAlignment.Center,
             Margin = new Thickness(0, 5),
         };
-        nameLabel.SetMarkup($"[bold]{teleporter.Name}[/bold]{(!teleporter.CanConnect ? $" ([color=red]{MathF.Sqrt(distSquared):F0} m[/color])" : "")}");
+        nameLabel.SetMarkup($"[bold]{teleporter.Name}[/bold]");
         mainBox.AddChild(nameLabel);
 
         // Left subpart
@@ -90,21 +86,13 @@ public sealed class TeleporterRowControl : PanelContainer
             Coordinates = coordinates,
             HorizontalAlignment = HAlignment.Right,
             SetWidth = 200f,
-            Disabled = !teleporter.CanLocate
         };
         rightBox.AddChild(LocateButton);
 
-        if (!teleporter.CanLocate)
-            LocateButton.ToolTip = Loc.GetString("teleporter-console-user-interface-locate-error-tooltip");
-
-
         // Link/Unlink button
         var buttonLoc = "teleporter-console-user-interface-start-connection";
-
         if (!teleporter.Powered)
             buttonLoc = "teleporter-console-user-interface-no-power";
-        else if (!teleporter.CanConnect)
-            buttonLoc = "teleporter-console-user-interface-connection-oor";
         else if (linked)
             buttonLoc = "teleporter-console-user-interface-cut-connection";
 
@@ -115,7 +103,7 @@ public sealed class TeleporterRowControl : PanelContainer
             Coordinates = coordinates,
             HorizontalAlignment = HAlignment.Right,
             SetWidth = 200f,
-            Disabled = !teleporter.Powered || !teleporter.CanConnect,
+            Disabled = !teleporter.Powered,
         };
         rightBox.AddChild(LinkButton);
     }

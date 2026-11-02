@@ -48,9 +48,6 @@
           collection: MetalBreak
       - !type:SpillBehavior
         solution: drainBuffer
-  - type: Construction
-    graph: FloorDrain
-    node: drain
 
 - type: entity
   parent: [SolutionDrain, SolutionNormal]
@@ -86,7 +83,7 @@
       damageContainer: StructuralInorganic
     - type: Construction
       graph: FloorDrain
-      node: screwing
+      node: drain
     - type: Destructible
       thresholds:
         - trigger:

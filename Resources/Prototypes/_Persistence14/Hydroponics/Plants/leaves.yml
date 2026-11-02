@@ -67,8 +67,6 @@
     production: 12
     yield: 2
     growthStages: 3
-  - type: PlantHarvest
-    harvestRepeat: Repeat
   - type: PlantAtmospheric
     lowHeatTolerance: 288 # 15°C
     highHeatTolerance: 308 # 35°C
@@ -93,8 +91,6 @@
     maturation: 8
     production: 12
     yield: 2
-  - type: PlantHarvest
-    harvestRepeat: Repeat
   - type: PlantAtmospheric
     lowHeatTolerance: 288 # 15°C
     highHeatTolerance: 308 # 35°C

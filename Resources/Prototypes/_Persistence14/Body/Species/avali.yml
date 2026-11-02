@@ -173,8 +173,6 @@
       types:
         Piercing: 2
         Slash: 3
-  - type: Wagging
-    action: "ActionToggleWaggingAvali"
   - type: Temperature
     specificHeat: 44
     temperature: 220
@@ -245,7 +243,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _Harmony/Mobs/Species/Avali/parts.rsi
+      sprite: _Starlight/Mobs/Species/Avali/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Avali
@@ -256,7 +254,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Harmony/Mobs/Species/Avali/parts.rsi
+    sprite: _Starlight/Mobs/Species/Avali/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganAvaliExternal ]
@@ -276,15 +274,6 @@
     dependentHidingLayers:
       enum.HumanoidVisualLayers.Snout:
       - enum.HumanoidVisualLayers.SnoutCover
-  - type: Sprite
-    state: head_f
-  - type: VisualOrgan
-    data:
-      sprite: _Harmony/Mobs/Species/Avali/parts.rsi
-    sexStateOverrides:
-      Male: head_m
-      Female: head_f
-
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganAvaliExternal ]

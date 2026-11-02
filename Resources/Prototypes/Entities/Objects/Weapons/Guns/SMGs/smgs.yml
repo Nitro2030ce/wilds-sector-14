@@ -1,6 +1,6 @@
 - type: entity
   name: BaseSMG
-  parent: [ BaseItem, BaseGunWieldClassSMG ]
+  parent: BaseItem
   id: BaseWeaponSubMachineGun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -259,9 +259,6 @@
     - Burst
     - FullAuto
     - SemiAuto
-  # Its tight base spread makes the SMG-class multiplier barely noticeable, so it gets a harsher one.
-  - type: GunUnwieldedPenalty
-    angleMultiplier: 3
   - type: ItemSlots
     slots:
       gun_magazine:

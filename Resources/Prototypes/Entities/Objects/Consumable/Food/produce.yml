@@ -1746,7 +1746,7 @@
   - type: Tag
     tags:
     - Galaxythistle
-    - Flower
+    - Fruit # Probably?
   - type: FoodSequenceElement
     entries:
       Taco: Galaxythistle

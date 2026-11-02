@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseGunWieldable, BaseGunWieldClassHeavy ]
+  parent: [ BaseItem, BaseGunWieldable ]
   id: BaseWeaponLauncher
   name: BaseWeaponLauncher
   description: A rooty tooty point and shooty.

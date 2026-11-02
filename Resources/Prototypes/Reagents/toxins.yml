@@ -366,7 +366,6 @@
   plantMetabolism:
   - !type:PlantAdjustMutationLevel
     amount: 1
-    mutationTable: RandomPlantMutations
   metabolisms:
     Bloodstream:
       effects:
@@ -766,9 +765,8 @@
   flavor: medicine
   color: "#435166"
   plantMetabolism:
-  - !type:PlantAdjustMutationLevel
-    amount: 1
-    mutationTable: EvilPlantMutations
+  - !type:PlantMutateChemicals
+    randomPickBotanyReagent: RandomPickChemicalVestine
   - !type:PlantAdjustNutrient
     amount: 1
     nutrient: Toxin

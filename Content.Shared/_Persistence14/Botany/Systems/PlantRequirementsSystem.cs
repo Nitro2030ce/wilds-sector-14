@@ -23,14 +23,13 @@ public sealed partial class PlantRequirementsSystem : EntitySystem
     [Dependency] private EntityQuery<PlantChemicalsComponent> _chemQuery = default!;
 
     [SubscribeLocalEvent(before: [typeof(PlantHarvestSystem)])]
-    private void OnHarvestAttempt(Entity<PlantHolderComponent> ent, ref PlantHarvestAttemptEvent args)
+    private void OnDoHarvest(Entity<PlantComponent> ent, ref DoHarvestEvent args) // TODO: Make this not require a component that isn't used.
     {
         if (!AllRequirementsFulfilled(ent))
         {
             _popup.PopupCursor(Loc.GetString("plant-component-low-nutrients-cant-harvest-message"), args.User);
-            ent.Comp.ReadyForHarvest = false;
-            Dirty(ent);
-            args.Cancelled = true;
+            //ent.Comp.ReadyForHarvest = false;
+            args.Cancel();
         }
     }
 

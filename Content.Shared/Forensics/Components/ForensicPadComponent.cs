@@ -20,7 +20,6 @@ public sealed partial class ForensicPadComponent : Component
     /// <summary>
     /// The information acquired from using the forensic pad.
     /// </summary>
-    [DataField]
     [AutoNetworkedField]
     public String Sample = string.Empty;
 }

@@ -201,9 +201,3 @@
   id: LumiCharge
   mapPath: /Maps/Rumors/Charge/lumi-charge.yml
   sizeString: salvage-map-wreck-size-small
-
-#Persistence 14
-- type: salvageMap
-  id: ZedCharge
-  mapPath: /Maps/Rumors/Charge/zed-charge.yml
-  sizeString: salvage-map-wreck-size-small
