@@ -1,6 +1,5 @@
 - type: entity
   parent: [ BaseMachinePowered, ConstructibleMachine ]
-  categories: [ HideSpawnMenu ]
   id: SalvageMagnet
   name: salvage magnet
   description: Pulls in salvage.
@@ -27,6 +26,8 @@
   - type: ActivatableUI
     key: enum.SalvageMagnetUiKey.Key
   - type: ActivatableUIRequiresPower
+  - type: ActivatableUIRequiresAccess
+  - type: AccessReader
   - type: UserInterface
     interfaces:
       enum.SalvageMagnetUiKey.Key:
@@ -40,6 +41,10 @@
     channels:
     - Supply
   - type: SalvageMagnet
+  - type: SalvageMagnetData
+    activeTime: 900
+    offerCooldown: 900
+    offerCount: 6
   - type: ApcPowerReceiver
     powerLoad: 2500 # TODO change this to a HV power draw that really hits the grid hard WHEN active
   - type: Machine
