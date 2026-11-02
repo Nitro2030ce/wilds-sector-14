@@ -238,7 +238,7 @@ namespace Content.Server.GameTicking
                 character);
             RaiseLocalEvent(mob, aev, true);
 
-            _chatManager.DispatchServerMessage(player, $"You have arrived in the Nexus Space as a Colonist. Find a job at a hiring desk.");
+            _chatManager.DispatchServerMessage(player, $"You have arrived in the Wilds Sector as a Colonist. Find a job, or seek your own destiny.");
 
             var saveFilePath = new ResPath($"{data!.UserId}]{character.Name}");
             if (mobMaybe != null)
