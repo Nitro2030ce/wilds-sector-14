@@ -236,11 +236,6 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
             return msg;
         }
 
-        //Stability PersistenceEdit
-        var stabilityText = Loc.GetString("anomaly-scanner-stability-percentage", ("percent", (1 - anomalyComp.Stability).ToString("P")));
-        msg.AddMarkupOrThrow(stabilityText);
-        msg.PushNewline();
-
         TryComp<SecretDataAnomalyComponent>(anomaly, out var secret);
 
         //Severity

@@ -89,21 +89,12 @@ public sealed partial class DeployableTurretSystem : SharedDeployableTurretSyste
 
         // Received a command to change access exemptions
         if (command == DeployableTurretControllerSystem.CmdSetAccessExemptions &&
-            args.Data.TryGetValue(command, out HashSet<int>? assignmentExemptions) &&
+            args.Data.TryGetValue(command, out HashSet<int>? accessExemptions) &&
             TryComp<TurretTargetSettingsComponent>(ent, out var turretTargetSettings))
         {
-            _turretTargetingSettings.SyncAccessAssignmentExemptions((ent, turretTargetSettings), assignmentExemptions);
+            _turretTargetingSettings.SyncAccessLevelExemptions((ent, turretTargetSettings), accessExemptions);
             return;
         }
-
-        if (command == DeployableTurretControllerSystem.CmdSetAccessExemptions &&
-            args.Data.TryGetValue(command, out HashSet<string>? nameExemptions) &&
-            TryComp<TurretTargetSettingsComponent>(ent, out var turretTargetSettings2))
-        {
-            _turretTargetingSettings.SyncAccessNameExemptions((ent, turretTargetSettings2), nameExemptions);
-            return;
-        }
-        //TIS check abck on this later above
 
         // Received a command to update the device network
         if (command == DeviceNetworkConstants.CmdUpdatedState)

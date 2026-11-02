@@ -2,8 +2,6 @@ using System.Linq;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Mobs; // funky
-using Content.Shared.Mobs.Components; // funky
 using Content.Shared.Radio;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -25,11 +23,6 @@ public sealed partial class ChatSystem
     {
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
-
-        // funky
-        if (TryComp<MobStateComponent>(source, out var mobState) && mobState.CurrentState == MobState.SoftCritical)
-            return;
-        // funky end
 
         var message = TransformSpeech(source, originalMessage);
 
@@ -98,17 +91,11 @@ public sealed partial class ChatSystem
         RadioChannelPrototype? channel,
         string? nameOverride,
         bool hideLog = false,
-        bool ignoreActionBlocker = false,
-        int? encryptionID = null
+        bool ignoreActionBlocker = false
         )
     {
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
-
-        // funky
-        if (channel != null && TryComp<MobStateComponent>(source, out var mobState) && mobState.CurrentState == MobState.SoftCritical)
-            channel = null;
-        // funky end
 
         var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage));
         if (message.Length == 0)
@@ -165,7 +152,7 @@ public sealed partial class ChatSystem
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
-        var ev = new EntitySpokeEvent(source, message, channel, obfuscatedMessage, encryptionID);
+        var ev = new EntitySpokeEvent(source, message, channel, obfuscatedMessage);
         RaiseLocalEvent(source, ev, true);
         if (!hideLog)
             if (originalMessage == message)

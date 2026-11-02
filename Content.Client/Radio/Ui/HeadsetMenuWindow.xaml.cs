@@ -8,7 +8,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
-using System;
+using System.Linq;
+using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Radio.Ui;
 
@@ -16,89 +17,54 @@ namespace Content.Client.Radio.Ui;
 public sealed partial class HeadsetMenuWindow : DefaultWindow
 {
     public HeadsetMenuBoundUserInterface? BUI;
-    private bool _updating;
 
     public HeadsetMenuWindow()
     {
         RobustXamlLoader.Load(this);
-        AllInputs.OnToggled += OnAllInputsToggled;
-        AllOutputs.OnToggled += OnAllOutputsToggled;
-        ShowTags.OnToggled += OnShowTagsToggled;
+        PossibleInputs.OnItemSelected += OnInputSelected;
+        PossibleOutputs.OnItemSelected += OnOutputSelected;
     }
 
-    private void OnAllInputsToggled(BaseButton.ButtonToggledEventArgs args)
+    private void OnInputSelected(OptionButton.ItemSelectedEventArgs args)
     {
-        if (_updating || BUI == null)
-            return;
-
-        BUI.SendMessage(new HeadsetMenuInputToggle(0, args.Pressed));
+        if (BUI != null)
+        {
+            BUI.SendMessage(new HeadsetMenuInputSelect(args.Id));
+        }
     }
-
-    private void OnAllOutputsToggled(BaseButton.ButtonToggledEventArgs args)
+    private void OnOutputSelected(OptionButton.ItemSelectedEventArgs args)
     {
-        if (_updating || BUI == null)
-            return;
-
-        BUI.SendMessage(new HeadsetMenuOutputToggle(0, args.Pressed));
+        if (BUI != null)
+        {
+            BUI.SendMessage(new HeadsetMenuOutputSelect(args.Id));
+        }
     }
-
-    private void OnShowTagsToggled(BaseButton.ButtonToggledEventArgs args)
-    {
-        if (_updating || BUI == null)
-            return;
-        BUI.SendMessage(new HeadsetMenuTagsToggle(args.Pressed));
-    }
-
     public void UpdateState(IPrototypeManager protoManager, HeadsetMenuBoundUserInterfaceState state)
     {
-        _updating = true;
-        PossibleInputs.RemoveAllChildren();
-        PossibleOutputs.RemoveAllChildren();
-
-        var receiveAll = state.RecieveFrom.Count == 0;
-        var transmitAll = state.TransmitTo.Count == 0;
-        AllInputs.Pressed = receiveAll;
-        AllOutputs.Pressed = transmitAll;
-
-        ShowTags.Pressed = state.ShowTags;
-
+        PossibleInputs.Clear();
+        PossibleOutputs.Clear();
+        PossibleInputs.AddItem("All");
+        PossibleOutputs.AddItem("All");
         foreach (var kv in state.FormattedStations)
         {
-            var inputToggle = new CheckBox
+            PossibleInputs.AddItem(kv.Value, kv.Key);
+            PossibleOutputs.AddItem(kv.Value, kv.Key);
+        }
+        if (state.RecieveFrom != 0 && !PossibleInputs.TrySelectId(state.RecieveFrom))
+        {
+            if (BUI != null)
             {
-                Text = kv.Value,
-                Pressed = !receiveAll && state.RecieveFrom.Contains(kv.Key),
-                Disabled = receiveAll,
-            };
-            var outputToggle = new CheckBox
+                BUI.SendMessage(new HeadsetMenuInputSelect(0));
+            }
+        }
+        if (state.TransmitTo != 0 && !PossibleOutputs.TrySelectId(state.TransmitTo))
+        {
+            if (BUI != null)
             {
-                Text = kv.Value,
-                Pressed = !transmitAll && state.TransmitTo.Contains(kv.Key),
-                Disabled = transmitAll,
-            };
-
-            var stationId = kv.Key;
-            inputToggle.OnToggled += args =>
-            {
-                if (_updating || BUI == null)
-                    return;
-
-                BUI.SendMessage(new HeadsetMenuInputToggle(stationId, args.Pressed));
-            };
-
-            outputToggle.OnToggled += args =>
-            {
-                if (_updating || BUI == null)
-                    return;
-
-                BUI.SendMessage(new HeadsetMenuOutputToggle(stationId, args.Pressed));
-            };
-
-            PossibleInputs.AddChild(inputToggle);
-            PossibleOutputs.AddChild(outputToggle);
+                BUI.SendMessage(new HeadsetMenuOutputSelect(0));
+            }
         }
 
-        _updating = false;
 
     }
 

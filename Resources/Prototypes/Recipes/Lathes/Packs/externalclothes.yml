@@ -21,8 +21,6 @@
   - ClothingHandsGlovesCaptain
   - ExtendedEmergencyOxygenTank
   - ExtendedEmergencyNitrogenTank
-  - EmergencyCoolingUnitRecipe
-  - CoolingUnitRecipe
 
 - type: latheRecipePack
   id: SecurityHardsuits

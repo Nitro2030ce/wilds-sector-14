@@ -1,7 +1,6 @@
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using System.Collections.Generic;
 
 namespace Content.Shared.Radio.Components;
 
@@ -20,25 +19,11 @@ public sealed partial class HeadsetComponent : Component
     [DataField, AutoNetworkedField]
     public SlotFlags RequiredSlot = SlotFlags.EARS;
 
-    // Persistence 14: multi-faction selection. Uses new YAML keys (transmitToStations/recieveFromStations)
-    // because the old scalar keys (transmitTo/recieveFrom) are kept below for save compatibility.
-    [DataField("transmitToStations"), AutoNetworkedField]
-    public HashSet<int> TransmitTo = new();
-
-    [DataField("recieveFromStations"), AutoNetworkedField]
-    public HashSet<int> RecieveFrom = new();
-
-    // Legacy single-station fields from before multi-faction headsets (0 = all factions).
-    // These only exist so pre-multi-faction saves still deserialize; HeadsetSystem migrates
-    // them into the sets above on ComponentStartup. Not networked.
-    [DataField("transmitTo")]
-    public int LegacyTransmitTo = 0;
-
-    [DataField("recieveFrom")]
-    public int LegacyRecieveFrom = 0;
+    [DataField, AutoNetworkedField]
+    public int TransmitTo = 0;
 
     [DataField, AutoNetworkedField]
-    public bool ShowTags = true;
+    public int RecieveFrom = 0;
 
     /// <summary>
     /// Limits the range at which this headset can broadcast to a telecomm server
@@ -51,16 +36,14 @@ public sealed partial class HeadsetComponent : Component
 public sealed class HeadsetMenuBoundUserInterfaceState : BoundUserInterfaceState
 {
     public Dictionary<int, string> FormattedStations = new();
-    public HashSet<int> TransmitTo = new();
-    public HashSet<int> RecieveFrom = new();
-    public bool ShowTags;
+    public int TransmitTo = 0;
+    public int RecieveFrom = 0;
 
-    public HeadsetMenuBoundUserInterfaceState(Dictionary<int, string> formattedStations, HashSet<int> transmitTo, HashSet<int> recieveFrom, bool showTags)
+    public HeadsetMenuBoundUserInterfaceState(Dictionary<int, string> formattedStations, int transmitTo, int recieveFrom)
     {
         FormattedStations = formattedStations;
         TransmitTo = transmitTo;
         RecieveFrom = recieveFrom;
-        ShowTags = showTags;
     }
 }
 [Serializable, NetSerializable]
@@ -70,31 +53,21 @@ public enum HeadsetMenuUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class HeadsetMenuOutputToggle : BoundUserInterfaceMessage
+public sealed class HeadsetMenuOutputSelect : BoundUserInterfaceMessage
 {
     public int Target;
-    public bool Enabled;
-    public HeadsetMenuOutputToggle(int target, bool enabled)
+    public HeadsetMenuOutputSelect(int target)
     {
         Target = target;
-        Enabled = enabled;
     }
 }
 
 [Serializable, NetSerializable]
-public sealed class HeadsetMenuTagsToggle(bool enabled) : BoundUserInterfaceMessage
-{
-    public bool Enabled = enabled;
-}
-
-[Serializable, NetSerializable]
-public sealed class HeadsetMenuInputToggle : BoundUserInterfaceMessage
+public sealed class HeadsetMenuInputSelect : BoundUserInterfaceMessage
 {
     public int Target;
-    public bool Enabled;
-    public HeadsetMenuInputToggle(int target, bool enabled)
+    public HeadsetMenuInputSelect(int target)
     {
         Target = target;
-        Enabled = enabled;
     }
 }

@@ -118,7 +118,6 @@
   materials:
     Glass: 50
     Wood: 20
-    
 
 # Moffstation - Begin - Replaced by modular HUDs
 #- type: latheRecipe

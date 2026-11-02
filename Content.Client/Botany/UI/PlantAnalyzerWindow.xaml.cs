@@ -125,15 +125,15 @@ public sealed partial class PlantAnalyzerWindow : FancyWindow
         if (!_botanySystem.TryGetPlantComponent<PlantAtmosphericComponent>(plantEntity, prototypeId, out var atmospheric))
             return;
 
-        UpdateCondition(Temperature, // Persistence: Use modified tolerances
+        UpdateCondition(Temperature,
             "botany-ui-temperature",
-            atmospheric.ModifiedLowHeatTolerance,
-            atmospheric.ModifiedHighHeatTolerance,
+            atmospheric.LowHeatTolerance,
+            atmospheric.HighHeatTolerance,
             "units-kelvin");
-        UpdateCondition(Pressure, // Persistence: Use modified tolerances
+        UpdateCondition(Pressure,
             "botany-ui-pressure",
-            atmospheric.ModifiedLowPressureTolerance,
-            atmospheric.ModifiedHighPressureTolerance,
+            atmospheric.LowPressureTolerance,
+            atmospheric.HighPressureTolerance,
             "units-k-pascal");
 
         if (!_botanySystem.TryGetPlantComponent<PlantGrowthComponent>(plantEntity, prototypeId, out var growth))

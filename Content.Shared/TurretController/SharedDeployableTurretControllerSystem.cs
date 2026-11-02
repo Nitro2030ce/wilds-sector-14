@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
 using Content.Shared.Popups;
@@ -26,9 +25,7 @@ public abstract partial class SharedDeployableTurretControllerSystem : EntitySys
 
         // Handling of client messages
         SubscribeLocalEvent<DeployableTurretControllerComponent, DeployableTurretArmamentSettingChangedMessage>(OnArmamentSettingChanged);
-        SubscribeLocalEvent<DeployableTurretControllerComponent, DeployableTurretExemptAccessAssignmentChangedMessage>(OnExemptAccessAssignmentsChanged);
-        SubscribeLocalEvent<DeployableTurretControllerComponent, DeployableTurretExemptAccessNameChangedMessage>(OnExemptAccessNameChanged);
-
+        SubscribeLocalEvent<DeployableTurretControllerComponent, DeployableTurretExemptAccessLevelChangedMessage>(OnExemptAccessLevelsChanged);
     }
 
     private void OnArmamentSettingChanged(Entity<DeployableTurretControllerComponent> ent, ref DeployableTurretArmamentSettingChangedMessage args)
@@ -40,19 +37,10 @@ public abstract partial class SharedDeployableTurretControllerSystem : EntitySys
             bui.Update<DeployableTurretControllerBoundInterfaceState>();
     }
 
-    private void OnExemptAccessAssignmentsChanged(Entity<DeployableTurretControllerComponent> ent, ref DeployableTurretExemptAccessAssignmentChangedMessage args)
+    private void OnExemptAccessLevelsChanged(Entity<DeployableTurretControllerComponent> ent, ref DeployableTurretExemptAccessLevelChangedMessage args)
     {
         if (IsUserAllowedAccess(ent, args.Actor))
             ChangeExemptAccessAssignments(ent, args.AccessAssignments, args.Enabled, args.Actor);
-
-        if (_userInterfaceSystem.TryGetOpenUi(ent.Owner, DeployableTurretControllerUiKey.Key, out var bui))
-            bui.Update<DeployableTurretControllerBoundInterfaceState>();
-    }
-
-    private void OnExemptAccessNameChanged(Entity<DeployableTurretControllerComponent> ent, ref DeployableTurretExemptAccessNameChangedMessage args)
-    {
-        if (IsUserAllowedAccess(ent, args.Actor))
-            ChangeExemptAccessName(ent, args.AccessNames, args.Delete, args.Actor);
 
         if (_userInterfaceSystem.TryGetOpenUi(ent.Owner, DeployableTurretControllerUiKey.Key, out var bui))
             bui.Update<DeployableTurretControllerBoundInterfaceState>();
@@ -86,30 +74,7 @@ public abstract partial class SharedDeployableTurretControllerSystem : EntitySys
             if (!ent.Comp.AccessAssignments.Contains(accessAssignment))
                 continue;
 
-            _turretTargetingSettings.SetAccessAssignment(controller, accessAssignment, enabled);
-        }
-
-        Dirty(controller);
-
-        // Linked turrets are updated on the server side
-    }
-
-    protected virtual void ChangeExemptAccessName(
-        Entity<DeployableTurretControllerComponent> ent,
-        HashSet<string> exemptions,
-        bool delete,
-        EntityUid? user = null
-    )
-    {
-        // Update the controller
-        if (!TryComp<TurretTargetSettingsComponent>(ent, out var targetSettings))
-            return;
-
-        var controller = new Entity<TurretTargetSettingsComponent>(ent, targetSettings);
-
-        foreach (var accessName in exemptions)
-        {
-            _turretTargetingSettings.SetAccessName(controller, accessName, delete);
+            _turretTargetingSettings.SetAccessLevelExemption(controller, accessAssignment, enabled);
         }
 
         Dirty(controller);
@@ -134,15 +99,6 @@ public abstract partial class SharedDeployableTurretControllerSystem : EntitySys
             return;
 
         var controller = new Entity<TurretTargetSettingsComponent>(ent, targetSettings);
-        _turretTargetingSettings.SetAccessAssignments(controller, targetSettings.ExemptAccessAssignments, false);
-    }
-
-    protected virtual void ClearExemptAccessNames(Entity<DeployableTurretControllerComponent> ent)
-    {
-         if (!TryComp<TurretTargetSettingsComponent>(ent, out var targetSettings))
-            return;
-
-        var controller = new Entity<TurretTargetSettingsComponent>(ent, targetSettings);
-        _turretTargetingSettings.SetAccessNames(controller, targetSettings.ExemptAccessNames, false);
+        _turretTargetingSettings.SetAccessLevelExemptions(controller, targetSettings.ExemptAccessAssignments, false);
     }
 }

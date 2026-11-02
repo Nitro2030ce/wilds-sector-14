@@ -1,5 +1,4 @@
 using Content.Shared._Persistence14.Botany;
-using Content.Shared._Persistence14.Botany.Systems;
 using Content.Shared._Persistence14.Random;
 using JetBrains.Annotations;
 using Content.Shared.Atmos;
@@ -21,7 +20,6 @@ public abstract partial class SharedPlantConsumeExudeGasSystem : EntitySystem
     [Dependency] private BotanySystem _botany = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private PlantMutationSystem _mutation = default!;
-    [Dependency] private PlantTolerancesSystem _tolerances = default!; // Persistence
     [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     [SubscribeLocalEvent]
@@ -52,8 +50,6 @@ public abstract partial class SharedPlantConsumeExudeGasSystem : EntitySystem
         gasses[gas] = quantity;
         // if (!gasses.TryAdd(gas, amount)) // Persistence: Replace with above
         //     gasses[gas] += amount;
-
-        _tolerances.TryUpdateModifiers(ent.Owner); // Persistence
 
         DirtyField(ent, nameof(ent.Comp.ExudeGasses));
     }

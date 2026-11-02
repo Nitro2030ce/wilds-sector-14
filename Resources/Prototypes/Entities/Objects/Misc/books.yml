@@ -189,7 +189,7 @@
       color: gold
   - type: GuideHelp
     guides:
-    - Persistence
+    - Threshold
   - type: Tag
     tags:
     - Recyclable

@@ -22,8 +22,6 @@
         Quantity: 12
       - ReagentId: Grain # Scav
         Quantity: 80
-      - ReagentId: Oil
-        Quantity: 5
   - type: Item
     size: Normal
     shape:
@@ -54,8 +52,6 @@
         Quantity: 1
       - ReagentId: Grain # Scav
         Quantity: 6
-      - ReagentId: Oil
-        Quantity: 1
   - type: Item
     size: Tiny
   - type: Tag

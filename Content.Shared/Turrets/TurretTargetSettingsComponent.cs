@@ -10,14 +10,12 @@ namespace Content.Shared.Turrets;
 public sealed partial class TurretTargetSettingsComponent : Component
 {
     /// <summary>
-    /// Crew with one or more access assignments from these lists are exempt from being targeted by turrets.
+    /// Crew with one or more access assignments or names from these lists are exempt from being targeted by turrets.
     /// </summary>
-    [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
     public HashSet<int> ExemptAccessAssignments = new();
 
-    /// <summary>
-    /// Crew with one or more personal access names from these lists are exempt from being targeted by turrets.
-    /// </summary>
-    [DataField, AutoNetworkedField, ViewVariables]
+    // placeholder for now untill personal acces stuff is added
+    [AutoNetworkedField]
     public HashSet<string> ExemptAccessNames = new();
 }

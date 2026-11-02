@@ -1,7 +1,6 @@
 using JetBrains.Annotations;
 using Content.Shared._Persistence14.Botany;
 using Content.Shared._Persistence14.Botany.Components;
-using Content.Shared._Persistence14.Botany.Systems;
 using Content.Shared._Persistence14.Random;
 using Content.Shared.Botany.Components;
 using Content.Shared.Botany.Events;
@@ -21,7 +20,6 @@ public sealed partial class PlantChemicalsSystem : EntitySystem
 {
     [Dependency] private BotanySystem _botany = default!;
     [Dependency] private PlantMutationSystem _mutation = default!;
-    [Dependency] private PlantTolerancesSystem _tolerances = default!; // Persistence
     [Dependency] private IGameTiming _timing = default!;
 
     [SubscribeLocalEvent]
@@ -68,9 +66,6 @@ public sealed partial class PlantChemicalsSystem : EntitySystem
 
         //var potencyDivisor = 100f / seedChemQuantity.Max;
         //seedChemQuantity.PotencyDivisor = (float)potencyDivisor;
-
-        _tolerances.TryUpdateModifiers(ent.Owner); // Persistence
-
         ent.Comp.Chemicals[chemicalId] = seedChemQuantity;
         Dirty(ent);
     }

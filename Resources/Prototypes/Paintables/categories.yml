@@ -24,10 +24,9 @@
   - WallLocker
   - WallCloset
 
-- type: paintableGroupCategory # Persistence
+- type: paintableGroupCategory
   id: Items
   groups:
   - ItemContainers
   - ItemPDAs
   - ItemHeadsets
-  - PillBottle

@@ -186,7 +186,7 @@
   # - PlantAtmospheric # Persistence: Plant nutrient rework
   - PlantConsumeExudeGas
   - PlantWeedPest
-  # - PlantToxins # Persistence: Plant nutrient rework
+  - PlantToxins
   # traits
   - PlantTraitKudzu
   - PlantTraitLigneous

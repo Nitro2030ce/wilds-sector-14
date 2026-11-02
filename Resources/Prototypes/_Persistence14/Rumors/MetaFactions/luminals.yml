@@ -5,7 +5,6 @@
   rumors:
     - PrayBasicFriendly
     - DrinkBasicFriendly
-    - ReceiveMailFriendly
   color: Yellow
   levels:
     Luminals2: 150

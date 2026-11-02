@@ -64,12 +64,9 @@ spray-painter-tab-group-locker = Secure
 spray-painter-tab-group-wallcloset = Unlocked (Wall)
 spray-painter-tab-group-walllocker = Secure (Wall)
 
-# Start Persistence
 spray-painter-tab-group-itemcontainers = Containers
 spray-painter-tab-group-itempdas = PDAs
 spray-painter-tab-group-itemheadsets = Headsets
-spray-painter-tab-group-pillbottle = Pill Bottles
-# End Persistence
 
 # Airlocks
 spray-painter-style-airlockstandard-atmospherics = Atmospheric
@@ -256,7 +253,6 @@ spray-painter-style-itemcontainers-pwr-game = PWR Game
 spray-painter-style-itemcontainers-beer = Beer
 spray-painter-style-itemcontainers-wine = Wine
 
-# Start Persistence
 # Items - PDAs
 spray-painter-style-itempdas-passenger = Passenger
 spray-painter-style-itempdas-captain = Captain
@@ -325,17 +321,3 @@ spray-painter-style-itemheadsets-centcom = CentCom
 spray-painter-style-itemheadsets-freelance = Freelance
 spray-painter-style-itemheadsets-wizard = Wizard
 spray-painter-style-itemheadsets-ninja = Ninja
-
-# Items - Pill Canisters
-spray-painter-style-pillbottle-basic = Basic
-spray-painter-style-pillbottle-crimson = Crimson
-spray-painter-style-pillbottle-red = Red
-spray-painter-style-pillbottle-orange = Orange
-spray-painter-style-pillbottle-yellow = Yellow
-spray-painter-style-pillbottle-lime = Lime
-spray-painter-style-pillbottle-green = Green
-spray-painter-style-pillbottle-cyan = Cyan
-spray-painter-style-pillbottle-blue = Blue
-spray-painter-style-pillbottle-purple = Purple
-
-# End Persistence

@@ -1,7 +1,6 @@
 using JetBrains.Annotations;
 using System.Linq;
 using Content.Shared._Persistence14.Botany;
-using Content.Shared._Persistence14.Botany.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Botany.Components;
 using Content.Shared.Botany.Traits.Components;
@@ -29,7 +28,6 @@ public sealed partial class PlantMutationSystem : EntitySystem
     [Dependency] private ISerializationManager _serialization = default!;
     [Dependency] private PlantSystem _plant = default!;
     [Dependency] private PlantAnalyzerSystem _plantAnalyzer = default!;
-    [Dependency] private PlantTolerancesSystem _plantTolerances = default!; // Persistence
     [Dependency] private PlantTraySystem _plantTray = default!;
     [Dependency] private SharedEntityEffectsSystem _entityEffects = default!;
 
@@ -98,7 +96,6 @@ public sealed partial class PlantMutationSystem : EntitySystem
         else
             _plant.PlantingPlant(newPlantUid);
 
-        _plantTolerances.TryUpdateModifiers(newPlantUid); // Persistence
         _plant.ForceUpdate(newPlantUid);
         _plantAnalyzer.ReplacePlantUi(oldPlant.Owner, newPlantUid, newPlantProto);
         QueueDel(oldPlant);

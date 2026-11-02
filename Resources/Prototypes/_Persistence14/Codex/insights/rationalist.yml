@@ -1,14 +1,14 @@
 - type: insightTrait
   id: AnomalySense
-  name: insight-ration-1-name
-  content: insight-ration-1-desc
-  next: Rationalist2
+  name: insight-rationalist-anomaly-sense-name
+  content: insight-rationalist-anomaly-sense-desc
+  next: ArtifactReroll
   trait: AnomalySense
 
 - type: trait
   id: AnomalySense
-  name: insight-ration-1-name
-  description: insight-ration-1-desc
+  name: insight-rationalist-anomaly-sense-name
+  description: insight-rationalist-anomaly-sense-desc
   selectable: false
   components:
     - type: ActionGrant
@@ -30,50 +30,49 @@
     - state: flower
   - type: InstantAction
     event: !type:SenseAnomalyEvent
-      range: 3
 
 - type: insightTrait
-  id: Rationalist2
-  name: insight-ration-2-name
-  content: insight-ration-2-desc
-  trait: Rationalist2
+  id: ArtifactReroll
+  name: insight-rationalist-reroll-node-name
+  content: insight-rationalist-reroll-node-desc
+  trait: ArtifactReroll
   next: Rationalist3
 
 - type: trait
-  id: Rationalist2
-  name: insight-ration-2-name
-  description: insight-ration-2-desc
+  id: ArtifactReroll
+  name: insight-rationalist-reroll-node-name
+  description: insight-rationalist-reroll-node-desc
   selectable: false
   components:
     - type: ActionGrant
       actions:
-        - ArtifexiumBurst
+        - ActionArtifactReroll
       autoDelete: true
 
 - type: entity
   parent: BaseAction
-  id: ArtifexiumBurst
-  name: Artifexium Burst
-  description: Emits a burst of artifexium, randomly triggering a primed node on all nearby artifacts.
+  id: ActionArtifactReroll
+  name: Beggar's choice
+  description: Reroll a node on an artifact (WIP).
   components:
   - type: Action
-    useDelay: 1h
+    useDelay: 30
   - type: Sprite
-    sprite: Objects/Magic/magicactions.rsi
+    sprite: Clothing/Neck/Misc/pins.rsi
     layers:
-    - state: shield
+    - state: flower
   - type: InstantAction
-    event: !type:ArtifexiumBurstEvent
+    event: !type:ArtifactRerollEvent
 
 - type: insightTrait
   id: Rationalist3
-  name: insight-ration-3-name
-  content: insight-ration-3-desc
+  name: Anomaly Generator
+  content: Once per day you can generate an anomaly of your choosing.
   next: Rationalist4
   trait: AnomalySense
 
 - type: insightTrait
   id: Rationalist4
-  name: insight-ration-4-name
-  content: insight-ration-4-desc
+  name: Upgrade Overclocker
+  content: Once per day you can apply one upgrade past the limit on an item or machine.
   trait: AnomalySense

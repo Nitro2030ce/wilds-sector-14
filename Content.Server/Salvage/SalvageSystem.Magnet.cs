@@ -37,8 +37,9 @@ public sealed partial class SalvageSystem
 
     private void OnMagnetClaim(EntityUid uid, SalvageMagnetComponent component, ref MagnetClaimOfferEvent args)
     {
+        var station = _station.GetOwningStation(uid);
 
-        if (!TryComp(uid, out SalvageMagnetDataComponent? dataComp) ||
+        if (!TryComp(station, out SalvageMagnetDataComponent? dataComp) ||
             dataComp.EndTime != null)
         {
             return;
@@ -49,7 +50,7 @@ public sealed partial class SalvageSystem
         {
             try
             {
-                await TakeMagnetOffer((uid, dataComp), index, (uid, component));
+                await TakeMagnetOffer((station.Value, dataComp), index, (uid, component));
             }
             catch (Exception e)
             {
@@ -176,7 +177,6 @@ public sealed partial class SalvageSystem
             // Go and cleanup the active ents.
             foreach (var ent in data.Comp.ActiveEntities)
             {
-                _transform.DetachEntity(ent);
                 QueueDel(ent);
             }
 
@@ -237,8 +237,9 @@ public sealed partial class SalvageSystem
 
     private void UpdateMagnetUI(Entity<SalvageMagnetComponent> entity, TransformComponent xform)
     {
+        var station = _station.GetOwningStation(entity, xform);
 
-        if (!TryComp(entity, out SalvageMagnetDataComponent? dataComp))
+        if (!TryComp(station, out SalvageMagnetDataComponent? dataComp))
             return;
 
         _ui.SetUiState(entity.Owner, SalvageMagnetUiKey.Key,
@@ -254,9 +255,25 @@ public sealed partial class SalvageSystem
 
     private void UpdateMagnetUIs(Entity<SalvageMagnetDataComponent> data)
     {
-        if (!TryComp(data, out SalvageMagnetComponent? dataComp))
-            return;
-        UpdateMagnetUI((data.Owner, dataComp), Transform(data.Owner));
+        var query = AllEntityQuery<SalvageMagnetComponent, TransformComponent>();
+
+        while (query.MoveNext(out var magnetUid, out var magnet, out var xform))
+        {
+            var station = _station.GetOwningStation(magnetUid, xform);
+
+            if (station != data.Owner)
+                continue;
+
+            _ui.SetUiState(magnetUid, SalvageMagnetUiKey.Key,
+                new SalvageMagnetBoundUserInterfaceState(data.Comp.Offered)
+                {
+                    Cooldown = data.Comp.OfferCooldown,
+                    Duration = data.Comp.ActiveTime,
+                    EndTime = data.Comp.EndTime,
+                    NextOffer = data.Comp.NextOffer,
+                    ActiveSeed = data.Comp.ActiveSeed,
+                });
+        }
     }
 
     private async Task TakeMagnetOffer(Entity<SalvageMagnetDataComponent> data, int index, Entity<SalvageMagnetComponent> magnet)

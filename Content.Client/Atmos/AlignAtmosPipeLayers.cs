@@ -15,7 +15,6 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Numerics;
-using Content.Shared.Administration.Managers; // Persistence
 using static Robust.Client.Placement.PlacementManager;
 
 namespace Content.Client.Atmos;
@@ -32,8 +31,6 @@ public sealed partial class AlignAtmosPipeLayers : SnapgridCenter
     [Dependency] private IPrototypeManager _protoManager = default!;
     [Dependency] private IEyeManager _eyeManager = default!;
     [Dependency] private IPlayerManager _playerManager = default!;
-
-    [Dependency] private ISharedAdminManager _adminManager = default!; // Persistence
 
     private readonly SharedMapSystem _mapSystem;
     private readonly SharedTransformSystem _transformSystem;
@@ -69,7 +66,7 @@ public sealed partial class AlignAtmosPipeLayers : SnapgridCenter
             return false;
         }
 
-        if (!_adminManager.IsAdmin(player) && !_transformSystem.InRange(xform.Coordinates, position, SharedInteractionSystem.InteractionRange))
+        if (!_transformSystem.InRange(xform.Coordinates, position, SharedInteractionSystem.InteractionRange))
         {
             InvalidPlaceColor = InvalidPlaceColor.WithAlpha(0f);
             return false;

@@ -8,11 +8,9 @@ using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Radio.EntitySystems;
 using Content.Shared.Station.Components;
-using Content.Shared.Mind;
 using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using System.Linq;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -23,55 +21,39 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private AccessReaderSystem _accessReader = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private UserInterfaceSystem _userInterface = default!;
-    [Dependency] private SharedMindSystem _mind = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<HeadsetComponent, RadioReceiveEvent>(OnHeadsetReceive);
         SubscribeLocalEvent<HeadsetComponent, EncryptionChannelsChangedEvent>(OnKeysChanged);
-        SubscribeLocalEvent<HeadsetComponent, ComponentStartup>(OnHeadsetStartup);
 
         SubscribeLocalEvent<WearingHeadsetComponent, EntitySpokeEvent>(OnSpeak);
         Subs.BuiEvents<HeadsetComponent>(HeadsetMenuUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(UpdateUserInterface);
-            subs.Event<HeadsetMenuInputToggle>(OnToggleInput);
-            subs.Event<HeadsetMenuOutputToggle>(OnToggleOutput);
-            subs.Event<HeadsetMenuTagsToggle>(OnToggleTags);
+            subs.Event<HeadsetMenuInputSelect>(OnSelectInput);
+            subs.Event<HeadsetMenuOutputSelect>(OnSelectOutput);
         });
-    }
-
-    /// <summary>
-    /// Migrates legacy single-station fields from pre-multi-faction saves into the station sets.
-    /// Old saves store transmitTo/recieveFrom as a scalar int (0 = all factions); the fields are
-    /// now HashSet<int> under new YAML keys, so without this the entities would fail to load and
-    /// be deleted by the map loader.
-    /// </summary>
-    private void OnHeadsetStartup(EntityUid uid, HeadsetComponent component, ComponentStartup args)
-    {
-        if (component.LegacyTransmitTo != 0)
-        {
-            component.TransmitTo.Add(component.LegacyTransmitTo);
-            component.LegacyTransmitTo = 0;
-            Dirty(uid, component);
-        }
-
-        if (component.LegacyRecieveFrom != 0)
-        {
-            component.RecieveFrom.Add(component.LegacyRecieveFrom);
-            component.LegacyRecieveFrom = 0;
-            Dirty(uid, component);
-        }
     }
 
     private void UpdateUserInterface(EntityUid uid, HeadsetComponent component, EntityUid player)
     {
-        var formattedStations = GetFormattedStations(player);
-        component.TransmitTo.RemoveWhere(id => !formattedStations.ContainsKey(id));
-        component.RecieveFrom.RemoveWhere(id => !formattedStations.ContainsKey(id));
-
-        var newState = new HeadsetMenuBoundUserInterfaceState(formattedStations, new HashSet<int>(component.TransmitTo), new HashSet<int>(component.RecieveFrom), component.ShowTags);
+        var name = _accessReader.GetIdName(player);
+        List<EntityUid> possibleStations = new();
+        if (name != null)
+        {
+            possibleStations = _station.GetStationsAvailableTo(name);
+        }
+        Dictionary<int, string> formattedStations = new();
+        foreach (var station in possibleStations)
+        {
+            if (TryComp<StationDataComponent>(station, out var data) && data != null)
+            {
+                if (data.StationName != null) formattedStations.Add(data.UID, data.StationName);
+            }
+        }
+        var newState = new HeadsetMenuBoundUserInterfaceState(formattedStations, component.TransmitTo, component.RecieveFrom);
         _userInterface.SetUiState(uid, HeadsetMenuUiKey.Key, newState);
 
     }
@@ -83,106 +65,21 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
         UpdateUserInterface(uid, component, player);
     }
 
-    private void OnToggleInput(EntityUid uid, HeadsetComponent component, HeadsetMenuInputToggle args)
+    private void OnSelectInput(EntityUid uid, HeadsetComponent component, HeadsetMenuInputSelect args)
     {
         if (!component.Initialized)
             return;
-
-        var stations = GetFormattedStations(args.Actor);
-
-        if (args.Target == 0)
-        {
-            if (args.Enabled)
-                component.RecieveFrom.Clear();
-            else
-            {
-                // "All factions" unchecked switches from implicit-all to explicit toggles.
-                component.RecieveFrom.Clear();
-                foreach (var stationId in stations.Keys)
-                {
-                    component.RecieveFrom.Add(stationId);
-                }
-            }
-        }
-        else if (args.Enabled)
-        {
-            component.RecieveFrom.Add(args.Target);
-        }
-        else
-        {
-            component.RecieveFrom.Remove(args.Target);
-        }
-
-        Dirty(uid, component);
         var player = args.Actor;
+        component.RecieveFrom = args.Target;
         UpdateUserInterface(uid, component, player);
     }
-
-    private void OnToggleOutput(EntityUid uid, HeadsetComponent component, HeadsetMenuOutputToggle args)
+    private void OnSelectOutput(EntityUid uid, HeadsetComponent component, HeadsetMenuOutputSelect args)
     {
         if (!component.Initialized)
             return;
-
-        var stations = GetFormattedStations(args.Actor);
-
-        if (args.Target == 0)
-        {
-            if (args.Enabled)
-                component.TransmitTo.Clear();
-            else
-            {
-                // "All factions" unchecked switches from implicit-all to explicit toggles.
-                component.TransmitTo.Clear();
-                foreach (var stationId in stations.Keys)
-                {
-                    component.TransmitTo.Add(stationId);
-                }
-            }
-        }
-        else if (args.Enabled)
-        {
-            component.TransmitTo.Add(args.Target);
-        }
-        else
-        {
-            component.TransmitTo.Remove(args.Target);
-        }
-
-        Dirty(uid, component);
         var player = args.Actor;
+        component.TransmitTo = args.Target;
         UpdateUserInterface(uid, component, player);
-    }
-
-    private void OnToggleTags(EntityUid uid, HeadsetComponent component, HeadsetMenuTagsToggle args)
-    {
-        if (!component.Initialized)
-            return;
-
-        component.ShowTags = args.Enabled;
-
-        Dirty(uid, component);
-        var player = args.Actor;
-        UpdateUserInterface(uid, component, player);
-    }
-
-    private Dictionary<int, string> GetFormattedStations(EntityUid player)
-    {
-        Dictionary<int, string> formattedStations = new();
-
-        if (!_mind.TryGetMind(player, out _, out var mind) || string.IsNullOrWhiteSpace(mind.CharacterName))
-            return formattedStations;
-
-        var recordKey = mind.CharacterName;
-
-        foreach (var station in _station.GetStationsAvailableTo(recordKey))
-        {
-            if (!TryComp<StationDataComponent>(station, out var data) || data.StationName == null)
-                continue;
-
-            formattedStations[data.UID] = data.StationName;
-        }
-
-        return formattedStations;
     }
     private void OnKeysChanged(EntityUid uid, HeadsetComponent component, EncryptionChannelsChangedEvent args)
     {
@@ -200,10 +97,6 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
 
     public bool HasChannelAccess(EntityUid player, EntityUid faction, RadioChannelPrototype channel)
     {
-        if (!_mind.TryGetMind(player, out _, out var mind) || string.IsNullOrWhiteSpace(mind.CharacterName))
-            return false;
-
-        var recordKey = mind.CharacterName;
 
         if (TryComp<StationDataComponent>(faction, out var sD) && sD != null)
         {
@@ -213,19 +106,24 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
                 {
                     if (!data.Enabled) return false;
                     if (data.Access.Count <= 0) return true;
-
-                    if (TryComp<CrewRecordsComponent>(faction, out var crewRecords) && crewRecords != null)
+                    var name = _accessReader.GetIdName(player);
+                    if (name != null)
                     {
-                        if (crewRecords.TryGetRecord(recordKey, out var crewRecord) && crewRecord != null)
+                        if (sD.Owners.Contains(name)) return true;
+                        if (TryComp<CrewRecordsComponent>(faction, out var crewRecords) && crewRecords != null)
                         {
-                            if (TryComp<CrewAssignmentsComponent>(faction, out var crewAssignments) && crewAssignments != null)
+                            if (crewRecords.TryGetRecord(name, out var crewRecord) && crewRecord != null)
                             {
-                                if (crewAssignments.TryGetAssignment(crewRecord.AssignmentID, out var crewAssignment) && crewAssignment != null)
+                                if (TryComp<CrewAssignmentsComponent>(faction, out var crewAssignments) && crewAssignments != null)
                                 {
-                                    foreach (var access in data.Access)
+                                    if (crewAssignments.TryGetAssignment(crewRecord.AssignmentID, out var crewAssignment) && crewAssignment != null)
                                     {
-                                        if (crewAssignment.AccessIDs.Contains(access)) return true;
+                                        foreach (var access in data.Access)
+                                        {
+                                            if (crewAssignment.AccessIDs.Contains(access)) return true;
+                                        }
                                     }
+
                                 }
                             }
                         }
@@ -242,48 +140,27 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
         {
             if (TryComp<HeadsetComponent>(component.Headset, out var headsetComp) && headsetComp != null)
             {
-                if (!args.Channel.Encrypted)
+                if (!args.Channel.Encrypted && headsetComp.TransmitTo == 0)
                 {
                     _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset, transmitterRange: headsetComp.MaxBroadcastRange);
                     args.Channel = null; // prevent duplicate messages from other listeners.
                     return;
                 }
-
-                // Persistence 14: Use resolved transmit factions from the shared helper so encrypted custom channels work for explicit selections and for the UI's implicit "all factions" mode.
-                var transmitStations = GetTransmitStations(args.Source, headsetComp).ToList();
-                if (transmitStations.Count <= 0)
-                    return;
-
-                if (args.EncryptionID is { } targetedEncryptionId && targetedEncryptionId > 0)
+                else
                 {
-                    var targetedFaction = _station.GetStationByID(targetedEncryptionId);
-                    if (targetedFaction == null || !transmitStations.Contains(targetedFaction.Value))
-                        return;
-
-                    if (HasChannelAccess(args.Source, targetedFaction.Value, args.Channel))
+                    if (headsetComp.TransmitTo == 0) return;
+                    var faction = _station.GetStationByID(headsetComp.TransmitTo);
+                    if (faction != null)
                     {
-                        _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset, encryptionID: targetedEncryptionId, transmitterRange: headsetComp.MaxBroadcastRange);
-                        args.Channel = null; // prevent duplicate messages from other listeners.
+                        if (HasChannelAccess(args.Source, faction.Value, args.Channel))
+                        {
+                            _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset, transmitterRange: headsetComp.MaxBroadcastRange);
+                            args.Channel = null; // prevent duplicate messages from other listeners.
+                            return;
+                        }
                     }
 
-                    return;
                 }
-
-                var sent = false;
-                foreach (var faction in transmitStations)
-                {
-                    if (TryComp<StationDataComponent>(faction, out var stationData)
-                        && HasChannelAccess(args.Source, faction, args.Channel))
-                    {
-                        _radio.SendRadioMessage(uid, args.Message, args.Channel, component.Headset, encryptionID: stationData.UID, transmitterRange: headsetComp.MaxBroadcastRange);
-                        sent = true;
-                    }
-                }
-
-                if (sent)
-                    args.Channel = null; // prevent duplicate messages from other listeners.
-                return;
-                // End Persistence 14
 
             }
         }

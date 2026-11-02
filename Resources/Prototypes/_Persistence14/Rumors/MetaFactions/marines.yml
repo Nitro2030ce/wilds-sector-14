@@ -6,7 +6,6 @@
     - DrinkBasicFriendly
     - EatBasicFriendly
     - DrinkBasicEvil
-    - ReceiveMailFriendly
   color: Olive
   levels:
     Marines2: 150
@@ -21,7 +20,7 @@
     - MarineUpgradeModule
     - TradeGood
     - MarineCodexFragment
-    - UNMCMerchCrate
+    - GrandLottery
     - MarineWebbing
   rewardsToOffer: 2
 
@@ -43,7 +42,6 @@
     - RaidSuit
     - Hushpup
     - CombatToolbox
-    - MarineM45c
   rewardsToOffer: 2
 
 - type: metaFactionLevel

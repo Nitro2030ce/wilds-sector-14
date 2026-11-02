@@ -467,18 +467,4 @@ public abstract partial class SharedXenoArtifactSystem
         _audio.PlayPvs(node.Comp.ShatterSound, node.Owner);
         Dirty(node);
     }
-
-    public IEnumerable<Entity<XenoArtifactNodeComponent>> GetPrimedNodes(Entity<XenoArtifactComponent> artifact)
-    {
-        foreach (var node in GetAllNodes(artifact))
-        {
-            if (!node.Comp.Locked)
-                continue;
-
-            if (!HasUnlockedPredecessor(artifact, node))
-                continue;
-
-            yield return node;
-        }
-    }
 }

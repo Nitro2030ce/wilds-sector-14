@@ -175,8 +175,6 @@
     flavors:
       - bun
       - bacon
-      - cheesy
-      - oily
   - type: Sprite
     state: bacon
   - type: Solution
@@ -287,9 +285,6 @@
       - meaty
       - oily
       - cheesy
-      - tomato
-      - bun
-      - onion
   - type: Solution
     solution:
       reagents:
@@ -303,8 +298,6 @@
         Quantity: 2
       - ReagentId: Grain # Scav
         Quantity: 10
-      - ReagentId: Oil
-        Quantity: 5
   - type: Sprite
     state: bigbite
   - type: Tag
@@ -347,8 +340,6 @@
         Quantity: 6
       - ReagentId: Grain # Scav
         Quantity: 10
-      - ReagentId: Oil
-        Quantity: 2
   - type: Sprite
     state: bloodredburger
   - type: Tag
@@ -372,7 +363,6 @@
     flavors:
       - bun
       - meaty
-      - cheesy
   - type: Sprite
     state: brain
   - type: Tag
@@ -398,7 +388,6 @@
     flavors:
       - bun
       - meaty
-      - cheesy
   - type: Sprite
     state: cheese
   - type: Solution
@@ -432,7 +421,6 @@
     flavors:
       - bun
       - meaty
-      - cheesy
   - type: Sprite
     state: cheese
   - type: Solution
@@ -466,7 +454,6 @@
     flavors:
       - bun
       - meaty
-      - cheesy
   - type: Sprite
     state: cheese
   - type: Solution
@@ -500,7 +487,6 @@
     flavors:
       - bun
       - meaty
-      - cheesy
   - type: Sprite
     state: cheese
   - type: Solution
@@ -534,7 +520,6 @@
     flavors:
       - bun
       - meaty
-      - cheesy
   - type: Sprite
     state: cheese
   - type: Solution
@@ -574,7 +559,6 @@
       - bun
       - meaty
       - cat
-      - cheesy
   - type: Tag
     tags:
     - Meat
@@ -590,7 +574,6 @@
       - bun
       - meaty
       - cheesy
-      - oily
   - type: Sprite
     state: cheese
   - type: Solution
@@ -770,9 +753,7 @@
       - bun
       - meaty
       - cheesy
-      - oily
       - flare
-      - spicy
   - type: Sprite
     state: crazy
   - type: Solution
@@ -1347,8 +1328,6 @@
         Quantity: 1
       - ReagentId: Grain # Scav
         Quantity: 10
-      - ReagentId: Oil
-        Quantity: 5
   - type: Sprite
     state: superbite
   - type: Tag
@@ -1454,3 +1433,4 @@
   - type: Tag
     tags:
     - Meat
+

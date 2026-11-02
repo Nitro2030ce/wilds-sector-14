@@ -32,7 +32,6 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Numerics;
-using Content.Shared.Tools.Components;
 
 namespace Content.Server.Kitchen.ButcheringMachine
 {
@@ -227,10 +226,6 @@ namespace Content.Server.Kitchen.ButcheringMachine
             if (TryComp<ButcherableComponent>(toProcess, out var butcherableComponent))
             {
                 component.SpawnedEntities = butcherableComponent.SpawnedEntities;
-            }
-            else if (TryComp<ToolRefinableComponent>(toProcess, out var refinable))
-            {
-                component.SpawnedEntities = refinable.RefineResult;
             }
 
             component.ProcessingTimer = physics.FixturesMass * component.ProcessingTimePerUnitMass;
