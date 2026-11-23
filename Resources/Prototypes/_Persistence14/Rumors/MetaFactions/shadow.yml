@@ -19,7 +19,7 @@
   name: Neophyte
   rumorRewards:
     - ShadowUpgradeModule
-    - TradeGood
+    #- TradeGood
     - ShadowCodexFragment
     - ShadowMerchCrate
     - GrandLottery
@@ -31,7 +31,7 @@
   name: Truth Seeker
   rumorRewards:
     - ShadowUpgradeModule
-    - TradeGood
+    #- TradeGood
     - ShadowCodexFragment
     - ShadowKnifeKit
     - ChemKit
@@ -53,7 +53,7 @@
   name: Knowledge Keeper
   rumorRewards:
     - ShadowUpgradeModule
-    - TradeGood
+    #- TradeGood
     - ShadowCodexFragment
     - EDagger
     - VoiceMaskImplanter

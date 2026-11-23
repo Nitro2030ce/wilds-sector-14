@@ -46,7 +46,7 @@
 - type: entity
   id: GreenUpgradeModule
   parent: BaseUpgradeModule
-  name: upgrade module (Corporate-Pattern)
+  name: upgrade module (TSEC-Pattern)
   components:
   - type: Sprite
     layers:
@@ -58,7 +58,7 @@
 - type: entity
   id: MarineUpgradeModule
   parent: BaseUpgradeModule
-  name: upgrade module (Marine-Pattern)
+  name: upgrade module (Military-Pattern)
   components:
   - type: Sprite
     layers:

@@ -1,7 +1,7 @@
 - type: metaFaction
   id: Marines
-  name: UNMC Remnant
-  description: "The UNMC controls the Marines Universe."
+  name: TSEC Military
+  description: "The military branch of The Stellar Equality Coalition."
   rumors:
     - DrinkBasicFriendly
     - EatBasicFriendly
@@ -19,7 +19,7 @@
   name: Associate
   rumorRewards:
     - MarineUpgradeModule
-    - TradeGood
+    #- TradeGood
     - MarineCodexFragment
     - UNMCMerchCrate
     - MarineWebbing
@@ -31,7 +31,7 @@
   name: Officer
   rumorRewards:
     - MarineUpgradeModule
-    - TradeGood
+    #- TradeGood
     - MarineCodexFragment
     - MarineViper
     - VestArmor
@@ -52,7 +52,7 @@
   name: Commander
   rumorRewards:
     - MarineUpgradeModule
-    - TradeGood
+    #- TradeGood
     - MarineCodexFragment
     - MarineL-6SawBundle
     - ESword

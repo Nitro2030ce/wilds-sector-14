@@ -19,7 +19,7 @@
   name: Associate
   rumorRewards:
     - PrecursorUpgradeModule
-    - TradeGood
+    #- TradeGood
     - PrecursorCodexFragment
     - PrecursorPJs
     - PrecursorMerchCrate
@@ -31,7 +31,7 @@
   name: Agent
   rumorRewards:
     - PrecursorUpgradeModule
-    - TradeGood
+    #- TradeGood
     - PrecursorCodexFragment
     - Microwave
     - ChemKit
@@ -57,7 +57,7 @@
   name: Master Agent
   rumorRewards:
     - PrecursorUpgradeModule
-    - TradeGood
+    #- TradeGood
     - PrecursorCodexFragment
     - ECrossbow
     - RadioJammer

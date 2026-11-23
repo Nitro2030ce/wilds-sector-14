@@ -1,14 +1,14 @@
 - type: upgradeModuleType
   id: Zenith
-  name: "Zenith-Pattern"
+  name: "WSCS-Pattern"
 
 - type: upgradeModuleType
   id: Green
-  name: "Nanotrasen-Pattern"
+  name: "TSEC-Pattern"
 
 - type: upgradeModuleType
   id: Marine
-  name: "Marine-Pattern"
+  name: "Military-Pattern"
 
 - type: upgradeModuleType
   id: Shadow
