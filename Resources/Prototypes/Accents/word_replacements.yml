@@ -407,3 +407,17 @@
     accent-skeleton-words-7: accent-skeleton-words-replace-7
     accent-skeleton-words-8: accent-skeleton-words-replace-8
     accent-skeleton-words-9: accent-skeleton-words-replace-9
+
+- type: accent
+  id: scurret
+  wordReplacements:
+    accent-scurret-words-1: accent-scurret-words-replace-1
+    accent-scurret-words-2: accent-scurret-words-replace-2
+    accent-scurret-words-3: accent-scurret-words-replace-3
+    accent-scurret-words-4: accent-scurret-words-replace-4
+    accent-scurret-words-5: accent-scurret-words-replace-5
+    accent-scurret-words-6: accent-scurret-words-replace-6
+    accent-scurret-words-7: accent-scurret-words-replace-7
+    accent-scurret-words-8: accent-scurret-words-replace-7
+    accent-scurret-words-9: accent-scurret-words-replace-7
+    accent-scurret-words-10: accent-scurret-words-replace-7

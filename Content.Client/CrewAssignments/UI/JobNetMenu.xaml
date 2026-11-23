@@ -59,26 +59,7 @@
                             </TabContainer>
                         </BoxContainer>
                     </ScrollContainer>
-                    <ScrollContainer Name="Insights" VerticalExpand="True" HorizontalExpand="True" VScrollEnabled="False">
-                        <BoxContainer Orientation="Vertical">
-                            <BoxContainer Orientation="Horizontal">
-                                <Label Text="Unspent Insights: " StyleClasses="LabelKeyText" />
-                                <RichTextLabel Name="InsightPoints" Text="0" />
-                                <Control HorizontalExpand="True" />
-                                <Label Text="Codex Unlocks Required: " StyleClasses="LabelKeyText" />
-                                <ProgressBar Name="LevelBar"
-                                    HorizontalExpand="True"
-                                    MaxValue="1"
-                                    MinValue="0"
-                                    SetHeight="25"
-                                    Margin="10 5 10 5"
-                                    VerticalAlignment="Center">
-                                    <RichTextLabel Name="ContentLabel" Margin="10 0 0 0" Text="0 / 5" />
-                                </ProgressBar>
-                            </BoxContainer>
-                            <BoxContainer Orientation="Horizontal" VerticalExpand="True" HorizontalExpand="True" Name="InsightsBox" />
-                        </BoxContainer>
-                    </ScrollContainer>
+
                 </TabContainer>
             </BoxContainer>
             <BoxContainer Orientation="Vertical" VerticalExpand="True">

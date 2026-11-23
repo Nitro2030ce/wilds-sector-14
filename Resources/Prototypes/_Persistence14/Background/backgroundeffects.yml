@@ -54,11 +54,11 @@
 
 - type: backgroundEffect
   id: TraitOriginZenith
-  description: "[color=green]You will gain the 'Worked with Solar Legion' trait.\nA codex entry will be unlocked."
+  description: "[color=green]You will gain the 'Worked with Wilds Sector Colonization Society' trait.\nA codex entry will be unlocked."
   traits:
     - OriginZenith
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorRed
+    jumpsuit: ClothingUniformJumpsuitColorGreen
   reputationGains:
     Zenith: 200
   extraFactionRumors:
@@ -68,11 +68,11 @@
 
 - type: backgroundEffect
   id: TraitOriginGreen
-  description: "[color=green]You will gain the 'Known to Nanotrasen' trait.\nA codex entry will be unlocked."
+  description: "[color=green]You will gain the 'Known by The Stellar Equality Coalition' trait.\nA codex entry will be unlocked."
   traits:
     - OriginGreen
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorGreen
+    jumpsuit: ClothingUniformJumpsuitColorBlue
   reputationGains:
     Green: 200
   extraFactionRumors:
@@ -82,7 +82,7 @@
 
 - type: backgroundEffect
   id: TraitOriginMarine
-  description: "[color=green]You will gain the 'Familiar with the UNMC' trait.\nA codex entry will be unlocked."
+  description: "[color=green]You will gain the 'Familiar with the TSEC Military Branch' trait.\nA codex entry will be unlocked."
   traits:
     - OriginMarine
   equipment:

@@ -1,34 +1,34 @@
 - type: turningPoint
   id: ChosenByAuthority
-  name: Chosen for the Nexus
-  description: "The ruling authority in your sector selected you to send into the [bold]Nexus Space[/bold].\nYou must cut formal ties as the [bold]NCC[/bold] requires that everyone who enters [bold]Nexus Space[/bold] does so as an independent."
+  name: Chosen for Wilds
+  description: "You chose to participate in the colonization of the [bold]Wilds Sector[/bold].\nYou have cut former ties as there is no turning back."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: FellFromGrace
   name: Suddenly Disgraced
-  description: "As your reputation with the local authorities soured you were to flee into the [bold]Nexus Space[/bold].\nBecause of the [bold]NCC[/bold] and the [italic]Independents Truce[/italic] you know your pursuers cannot follow you into the [bold]Nexus Space[/bold]."
+  description: "As your reputation with the local authorities soured, you were given the option to join the [bold]Wilds Sector[/bold] colonization effort in lieu of jail time.\nHowever, you were required to undergo behavior reconditioning before you were allowed to participate."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: Magician
   name: Encountered by a Magician
-  description: "You encountered a strange traveler from beyond your Universe.\nThey claimed to be a [color=gray]Magician[/color] and convinced you to travel to the [bold]Nexus Space[/bold].\nYou left everything behind to pursue this Destiny."
+  description: "You encountered a strange traveler from beyond your Universe.\nThey claimed to be a [color=gray]Magician[/color] and convinced you to travel to the [bold]Wilds Sector[/bold].\nYou left everything behind to pursue this endeavour."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: Priestess
   name: Encouraged by a Priestess
-  description: "You encountered a wise [color=yellow]Priestess[/color] who knew many secrets of the Threshold.\nShe encouraged you to travel to the [bold]Nexus Space[/bold] to seek the Gods.\nYou left everything behind to pursue this Destiny."
+  description: "You encountered a wise [color=yellow]Priestess[/color] who knew many secrets of the ethereal universe.\nShe encouraged you to travel to the [bold]Wilds Sector[/bold] to seek the Gods.\nYou left everything behind to pursue this endeavour."
   effects:
     - TraitPledge
 
 - type: turningPoint
   id: Rational
   name: Lectured by a Rationalist
-  description: "A rationalist genius gave a lecture in your sector.\nThey said that everything about the Threshold can be explained by the science being conducted in the [bold]Nexus Space[/bold].\nYou left everything behind to pursue this Destiny."
+  description: "A rationalist genius gave a lecture in your sector.\nThey said that the [bold]Wilds Sector[/bold] may lead to undiscovered science.\nYou left everything behind to pursue this endeavour."
   effects:
     - TraitPledge

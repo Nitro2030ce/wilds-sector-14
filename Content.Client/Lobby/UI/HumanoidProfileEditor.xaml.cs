@@ -93,8 +93,8 @@ namespace Content.Client.Lobby.UI
 
         private ISawmill _sawmill;
 
-        public string ThresholdLore = "Travel into the Threshold is strictly one way and so you left everything behind the moment you passed through the true-space barrier.\nThe Threshold is divided into sectors; each sector has an abundance of rare materials and xeno-artifacts.\nYou settled within one of these sectors and intended to stay until..";
-        public string NexusLore = "At the center of each Threshold is the [bold]Nexus Space[/bold].\nThis space is shared and accessible through the Thresholds of over a dozen universes.\nThis sector is colonized as neutral territory to prevent the outbreak of [bold][color=red]Universal War[/bold][/color].\nThe major powers from the connected universes send colonists into the Nexus Space as 'independents'.";
+        public string ThresholdLore = "Travel to the Wilds Sector is strictly one way and so you left everything behind the moment you entered the signed the waiver.\nEach Wilds Sector is divided into sub-sectors; each sector has an abundance of rare materials and xeno-artifacts.\nYou settled within one of these sectors and intend to stay.";
+        public string NexusLore = "In the space between the Milky Way and Andromeda is the [bold]Wilds Sector[/bold].\nThis sector is colonized as 'neutral territory'.\nThe Wilds Sector Colonization Society sends colonists into the Wilds Sector to send resources back to Earth.";
 
         private MarkingsViewModel _markingsModel = new();
 

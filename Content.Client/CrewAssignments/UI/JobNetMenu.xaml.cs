@@ -38,7 +38,7 @@ public sealed partial class JobNetMenu : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         MasterTabContainer.SetTabTitle(0, "Job Network");
-        MasterTabContainer.SetTabTitle(1, "Insights");
+        MasterTabContainer.SetTabTitle(1, "Lore");
         MasterTabContainer.SetTabTitle(2, "Sector");
         MasterTabContainer.SetTabTitle(3, "Upgrades");
         MasterTabContainer.SetTabTitle(4, "Rumors");
@@ -154,7 +154,7 @@ public sealed partial class JobNetMenu : DefaultWindow
             codexPage.UpdateState(codexCat, entryList, state.CodexEntries);
             CodexCategoryTC.AddChild(codexPage);
         }
-        LevelBar.MaxValue = 5;
+        /*LevelBar.MaxValue = 5;
         LevelBar.Value = state.CodexUnlocksSince;
         ContentLabel.Text = $"{state.CodexUnlocksSince} / 5";
         InsightPoints.Text = state.UnspentInsights.ToString();
@@ -166,7 +166,7 @@ public sealed partial class JobNetMenu : DefaultWindow
         {
             InsightBoxFragment box = new(insightCategory, state.UnlockedInsights, state.UnspentInsights > 0, this, state.SectorAwake);
             InsightsBox.AddChild(box);
-        }
+        }*/
         _prototypeManager.Resolve(state.Level, out var levelProto);
         if (levelProto != null)
         {

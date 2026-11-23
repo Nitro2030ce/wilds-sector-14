@@ -1,21 +1,21 @@
 - type: motive
   id: Wealth
   name: Wealth
-  description: "The Threshold offers the promise of eternal riches to those bold enough to seize them."
+  description: "Wilds Space offers the promise of eternal riches to those bold enough to seize them."
   effects:
     - MotiveWealth
 
 - type: motive
   id: Power
   name: Power
-  description: "You are tired of submitting to the authority of others. Within the Threshold you will build your perfect world."
+  description: "You are tired of submitting to the authority of others. Within the Wilds Space you will build your perfect world."
   effects:
     - MotivePower
 
 - type: motive
   id: SecretKnowledge
   name: Secret Knowledge
-  description: "The last frontiers of science may be hidden within the Threshold. You intend to discover them."
+  description: "The last frontiers of science may be hidden out in Wilds Space. You intend to discover them."
   effects:
     - MotiveSecretKnowledge
 
@@ -29,6 +29,6 @@
 - type: motive
   id: Enlightenment
   name: Enlightenment
-  description: "Rumors swirl that the Gods from a different universe dwell at the edges of the Threshold."
+  description: "Rumors swirl that the Beings from a different universe dwell at the fringes of Wilds Space."
   effects:
     - MotiveEnlightenment

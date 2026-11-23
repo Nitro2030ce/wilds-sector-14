@@ -47,12 +47,12 @@ public sealed partial class JobSystem : SharedJobSystem
         if (!MindTryGetJob(mindId, out var prototype))
             return;
 
-        _chat.DispatchServerMessage(session, "You have entered the Threshold as a Colonist. You have been given a bank account with $50 to get you started.");
+        _chat.DispatchServerMessage(session, "You have entered the Wilds Sector as a Colonist. You have been given a bank account with some money to get you started.");
 
         if (prototype.RequireAdminNotify)
             _chat.DispatchServerMessage(session, Loc.GetString("job-greet-important-disconnect-admin-notify"));
 
-        _chat.DispatchServerMessage(session, "You are entitled to a paying job from Nanotrasen but you are also free to choose your own destiny. ");
+        _chat.DispatchServerMessage(session, "Join up with others or venture out on your own. You are in control of your destiny!");
     }
 
     public void MindAddJob(EntityUid mindId, string jobPrototypeId)

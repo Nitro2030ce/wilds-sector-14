@@ -176,7 +176,7 @@
                 <BoxContainer Name="Journey" Orientation="Vertical" Margin="10">
                     <ScrollContainer VerticalExpand="True" HScrollEnabled="False" >
                         <BoxContainer Orientation="Vertical" >
-                            <Label Text="The Threshold" StyleClasses="LabelHeading" />
+                            <Label Text="Wilds Sector Colonization Society" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
                             <RichTextLabel HorizontalAlignment="Left"
                                            Name="ThresholdLoreLabel" />
@@ -191,7 +191,7 @@
                                            Name="TurningPointLabel" />
                             <RichTextLabel Name="TurningPointEffectsLabel" HorizontalAlignment="Left"/>
                             <Control MinHeight="30" />
-                            <Label Text="Nexus Space" StyleClasses="LabelHeading" />
+                            <Label Text="Wilds Sector" StyleClasses="LabelHeading" />
                             <Control MinHeight="30" />
                             <RichTextLabel HorizontalAlignment="Left"
                                            Name="NexusLoreLabel" />

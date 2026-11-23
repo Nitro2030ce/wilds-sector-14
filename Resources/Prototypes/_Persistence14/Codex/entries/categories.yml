@@ -10,7 +10,7 @@
 
 - type: codexCategory
   id: Green
-  name: Corporate
+  name: The Stellar Equality Coalition
   order: 3
 
 - type: codexCategory
@@ -20,12 +20,12 @@
 
 - type: codexCategory
   id: Shadow
-  name: The Elders
+  name: Unknown entities
   order: 5
 
 - type: codexCategory
   id: Marine
-  name: UNMC Remnant
+  name: TSEC Military
   order: 6
 
 - type: codexCategory
