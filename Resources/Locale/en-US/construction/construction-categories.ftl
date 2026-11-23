@@ -6,7 +6,6 @@ construction-category-tools = Tools
 construction-category-materials = Materials
 construction-category-structures = Structures
 construction-category-machines = Machines
-construction-category-signs = Signs
 construction-category-weapons = Weapons
 construction-category-tiles = Tiles
 construction-category-utilities = Utilities
