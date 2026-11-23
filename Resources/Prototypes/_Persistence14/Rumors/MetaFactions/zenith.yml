@@ -19,7 +19,7 @@
   name: Associate
   rumorRewards:
     - ZenithUpgradeModule
-    #- TradeGood
+    - TradeGood
     - ZenithCodexFragment
     - GrandLottery
     - ZenithRumorContract
@@ -30,7 +30,7 @@
   name: Officer
   rumorRewards:
     - ZenithUpgradeModule
-    #- TradeGood
+    - TradeGood
     - ZenithCodexFragment
     - VestArmor
     - VestArmorElite
@@ -49,7 +49,7 @@
   name: Knight
   rumorRewards:
     - ZenithUpgradeModule
-    #- TradeGood
+    - TradeGood
     - ZenithCodexFragment
     - ESword
     - ScramImplanter

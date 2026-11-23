@@ -20,7 +20,7 @@
   name: Associate
   rumorRewards:
     - GreenUpgradeModule
-    #- TradeGood
+    - TradeGood
     - GreenCodexFragment
     - GreenPlasmaCrate
     - GreenMerchCrate
@@ -34,7 +34,7 @@
   rumorRewards:
     - GreenUpgradeModule
     - GreenCodexFragment
-    #- TradeGood
+    - TradeGood
     - GreenPhoronCrate
     - GreenMagBoots
     - ChemKit
@@ -55,7 +55,7 @@
   rumorRewards:
     - GreenUpgradeModule
     - GreenCodexFragment
-    #- TradeGood
+    - TradeGood
     - StorageImplanter
     - EShield
     - ECrossbow

@@ -2,7 +2,7 @@
   id: TradeGood
   parent: BaseItem
   name: trade node
-  description: A highly valuable device which generates resonance when stored on a trade station. Always exports for $10000.
+  description: A highly valuable device which generates resonance when stored on a trade station. Always exports for $6500.
   components:
   - type: Item
     storedRotation: -90
@@ -16,5 +16,5 @@
     layers:
     - state: icon
   - type: StaticPrice
-    price: 10000
+    price: 6500
   - type: TradeGood

@@ -19,7 +19,7 @@
   name: Associate
   rumorRewards:
     - MarineUpgradeModule
-    #- TradeGood
+    - TradeGood
     - MarineCodexFragment
     - UNMCMerchCrate
     - MarineWebbing
@@ -31,7 +31,7 @@
   name: Officer
   rumorRewards:
     - MarineUpgradeModule
-    #- TradeGood
+    - TradeGood
     - MarineCodexFragment
     - MarineViper
     - VestArmor
@@ -52,7 +52,7 @@
   name: Commander
   rumorRewards:
     - MarineUpgradeModule
-    #- TradeGood
+    - TradeGood
     - MarineCodexFragment
     - MarineL-6SawBundle
     - ESword

@@ -1,7 +1,7 @@
 - type: rumorReward
   id: TradeGood
   name: Trade Node
-  description: "A highly valuable device which generates resonance when stored on a trade station. Always exports for $10000."
+  description: "A highly valuable device which generates resonance when stored on a trade station. Always exports for $6500."
   price: 5000
   product: TradeGood
   icon:
