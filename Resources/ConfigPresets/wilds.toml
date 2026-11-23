@@ -1,22 +1,38 @@
-# Configuration preset for the official Persistence SS14 server.
-# This file was written with the expectation that persistBase would be loaded first.
+# Configuration preset for the official Persistence SS14 servers.
 # Related docs https://docs.spacestation14.com/en/general-development/tips/config-file-reference.html
 
+# If you are running a downstream that plans to keep parity with official, you can load this preset directly.
+# If you are running a downstream that plans to diverge from official, create a new configpreset & either use
+#   this file as a reference, or load this file into your configpreset using the example below & override
+#   the configurations that you want changed, then load your custom configpreset in your server's config.
+# To load a configpreset, add the following to your server_config.toml (or equivalent)
+# [config]
+# presets = "persistenceOfficial" # (or any other configpreset's name)
+
 [game]
-soft_max_players = 150
+soft_max_players = 50
 autosaveenabled = true
 autosaveinterval = 60
 panic_bunker.show_reason = true
 panic_bunker.custom_reason = "The server is not accepting new connections at this time."
+contraband_examine = false
 
 [hub]
-tags = "lang:en,region:am_n_w,rp:high"
+advertise = false
+tags = "rp:high,lang:en"
+hub_urls="https://hub.spacestation14.com/"
 
 [server]
 rules_file = "PersistRuleset"
+id = "WildsSector14"
+
+[infolinks]
+#bug_report = "https://github.com/michaelchessall/SS14-Persistence/issues/new/choose"
+#discord    = "https://discord.gg/YdAaaC56KH"
+github     = "https://github.com/Nitro2030ce/wilds-sector-14"
 
 [ooc]
-enable_during_round = false
+enable_during_round = true
 
 [looc]
 enabled_dead = true
@@ -27,17 +43,50 @@ flavor_text = true
 punctuation = false
 
 [lore]
-year_offset = 220
+year_offset = 200
 
 [tips]
 enabled = false
 
 [atmos]
 max_explosion_range = 4
+space_wind = true
+space_wind_max_push_force = 7
+space_wind_max_velocity = 10
+grid_impulse = false
 
 [admin]
+admins_count_in_playercount = true
 new_player_threshold = 600
 alert.min_players_sharing_connection = 2
 
 [afk]
 automatic_checks = false
+
+[worldgen]
+enabled = true
+
+[status]
+enabled = true
+
+[auth]
+mode = 1
+
+# Wilds Sector 14 Specific
+
+[funkystation.reagent_fire]
+puddle_damage_multiplier = 0.1
+
+[funkystation.cpr]
+rib_crack_damage = 10
+rib_crack_pump = 10
+
+[funkystation.defib]
+revive_chance = 0.7
+adrenaline_cost = 1
+
+[movement]
+mob_pushing = true
+
+[shuttle]
+impact.enabled = false
