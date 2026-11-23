@@ -27,3 +27,14 @@
   icon:
     sprite: Objects/Tools/Lighters/centcomm.rsi
     state: icon
+
+- type: rumorReward
+  id: ZenithRumorContract
+  name: Rumor Contract
+  description: A slip containing one WSCS rumor.
+  price: 5000
+  product: RumorContractZenith
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: paper_dotmatrix_words
+    color: Green
