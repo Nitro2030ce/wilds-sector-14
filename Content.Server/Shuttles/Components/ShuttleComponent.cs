@@ -21,7 +21,7 @@ namespace Content.Server.Shuttles.Components
         /// Maximum velocity.
         /// </summary>
         [DataField]
-        public float BaseMaxLinearVelocity = 60f;
+        public float BaseMaxLinearVelocity = 100f;
 
         public const float MaxAngularVelocity = 4f;
 
