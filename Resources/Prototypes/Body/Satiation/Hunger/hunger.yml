@@ -87,7 +87,7 @@
 - type: satiation
   id: ScurretHunger
   parent: SimpleMobBaseHunger
-  baseChangeRate: -0.05 # They get a lil' hungy
+  baseChangeRate: -0.008 # They get a lil' hungy # not anymore, normal hunger rate
 
 - type: satiation
   id: DionaHunger
