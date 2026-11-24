@@ -195,4 +195,20 @@ Entries:
   id: 25
   time: '2026-11-23T20:51:07.0000000+00:00'
   url: https://github.com/michaelchessall/SS14-Persistence/pull/1028
+- author: stinkiestdog
+  changes:
+  - message: Advanced topicals can only be used when the patient is above 90 damage in respective damage type.
+    type: Fix
+  id: 26
+  time: '2026-11-23T22:25:56.0000000+00:00'
+  url: https://github.com/michaelchessall/SS14-Persistence/pull/1029
+- author: stinkiestdog
+  changes:
+  - message: Firebots work again.
+    type: Fix
+  - message: Prayer rumors can be completed again.
+    type: Fix
+  id: 27
+  time: '2026-11-24T20:41:30.0000000+00:00'
+  url: https://github.com/michaelchessall/SS14-Persistence/pull/1032
 Order: 0
