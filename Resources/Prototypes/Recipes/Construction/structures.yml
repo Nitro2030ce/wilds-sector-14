@@ -591,11 +591,13 @@
   id: Firelock
   graph: Firelock
   targetNode: Firelock
+  placementMode: SnapgridCenter
 
 - type: construction
   parent: Firelock
   id: FirelockGlass
   targetNode: FirelockGlass
+  placementMode: SnapgridCenter
 
 - type: construction
   parent: Firelock
@@ -603,6 +605,7 @@
   name: construction-recipe-firelock-edge
   targetNode: FirelockEdge
   canRotate: true
+  placementMode: SnapgridCenter
 # endregion Firelocks
 
 # region Shutters
