@@ -1,26 +1,26 @@
-- type: resonanceProduct
-  id: WorldBoundary1
-  name: Grow Sector Boundary
-  description: "Use Resonance to expand the sector boundary."
-  price: 5000
-  shared: true
-  productType: MainWorldBoundary
-  radiusExpansion: 500
-  broadcastMessage: resonance-product-message-expansion
-  icon:
-    sprite: Structures/Specific/anomaly.rsi
-    state: anom4
+#- type: resonanceProduct
+#  id: WorldBoundary1
+#  name: Grow Sector Boundary
+#  description: "Use Resonance to expand the sector boundary."
+#  price: 5000
+#  shared: true
+#  productType: MainWorldBoundary
+#  radiusExpansion: 500
+#  broadcastMessage: resonance-product-message-expansion
+#  icon:
+#    sprite: Structures/Specific/anomaly.rsi
+#    state: anom4
 
-- type: resonanceProduct
-  id: WorldBoundary2
-  name: Grow Sector Boundary
-  description: "Use Resonance to expand the sector boundary."
-  price: 25000
-  shared: true
-  productType: MainWorldBoundary
-  radiusExpansion: 1000
-  requires: WorldBoundary1
-  broadcastMessage: resonance-product-message-expansion
-  icon:
-    sprite: Structures/Specific/anomaly.rsi
-    state: anom4
+#- type: resonanceProduct
+#  id: WorldBoundary2
+#  name: Grow Sector Boundary
+#  description: "Use Resonance to expand the sector boundary."
+#  price: 25000
+#  shared: true
+#  productType: MainWorldBoundary
+#  radiusExpansion: 1000
+#  requires: WorldBoundary1
+#  broadcastMessage: resonance-product-message-expansion
+#  icon:
+#    sprite: Structures/Specific/anomaly.rsi
+#    state: anom4

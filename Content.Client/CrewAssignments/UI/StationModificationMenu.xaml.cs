@@ -474,7 +474,7 @@ namespace Content.Client.CrewAssignments.UI
         public void UpdateResonance(StationModificationInterfaceState cState)
         {
             MarketInnerBox.RemoveAllChildren();
-            /*
+
             foreach (var product in cState.ResonanceMarket)
             {
                 ResonanceProductBox box = new(product, cState.Resonance, cState.PartialPurchases, _owner, cState.TradeStationClaimed);
@@ -490,7 +490,7 @@ namespace Content.Client.CrewAssignments.UI
             {
                 MarketClosedBox.Visible = true;
             }
-            */
+
         }
 
     }

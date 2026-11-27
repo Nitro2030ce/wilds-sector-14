@@ -1,0 +1,22 @@
+- type: resonanceProduct
+  id: IanCrate
+  name: Ian the Corgi
+  price: 2500
+  shared: false
+  unique: false
+  productType: Product
+  product: CrateNPCIan
+  icon:
+    sprite: Mobs/Pets/corgi.rsi
+    state: ian
+
+- type: entity
+  id: CrateNPCIan
+  parent: CrateLivestock
+  name: ian crate
+  description: A crate containing a corgi named Ian.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: MobCorgiIan
